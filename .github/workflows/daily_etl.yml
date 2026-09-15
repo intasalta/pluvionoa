@@ -1,0 +1,35 @@
+name: Actualizar Base Pluviometrica
+
+on:
+  schedule:
+    - cron: '0 9 * * *' # 06:00 AM ART (9:00 UTC)
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Instalar dependencias
+        run: |
+          pip install pandas requests
+
+      - name: Ejecutar ETL
+        env:
+          INTA_TOKEN: ${{ secrets.INTA_TOKEN }}
+        run: python process_data.py
+
+      - name: Commit y Push de datos generados
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data_acumulados.json
+          git commit -m "auto: actualización diaria de precipitaciones" || exit 0
+          git push
