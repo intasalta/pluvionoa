@@ -554,18 +554,24 @@
       document.getElementById('diferenciaMm').className = `text-xl font-black ${diff >= 0 ? 'text-emerald-500' : 'text-amber-500'}`;
 
       const datasets = [];
-
       if (pluvB !== "Ninguno" && pluvA !== "Todos") {
         document.getElementById('chartSubText').innerText = `Comparando ${pluvA} vs ${pluvB} (${periodo})`;
 
-        const arrA = Array(12).fill(0);
-        const arrB = Array(12).fill(0);
+        // Se inicializan con null en lugar de 0
+        const arrA = Array(12).fill(null);
+        const arrB = Array(12).fill(null);
 
-        dataA.forEach(i => { const idx = monthsOrder.indexOf(i.mes); if (idx !== -1) arrA[idx] += i.lluvia; });
-        dataB.forEach(i => { const idx = monthsOrder.indexOf(i.mes); if (idx !== -1) arrB[idx] += i.lluvia; });
+        dataA.forEach(i => { 
+          const idx = monthsOrder.indexOf(i.mes); 
+          if (idx !== -1) arrA[idx] = (arrA[idx] || 0) + i.lluvia; 
+        });
+        dataB.forEach(i => { 
+          const idx = monthsOrder.indexOf(i.mes); 
+          if (idx !== -1) arrB[idx] = (arrB[idx] || 0) + i.lluvia; 
+        });
 
-        datasets.push({ label: pluvA, data: arrA, borderColor: '#0284c7', backgroundColor: '#0284c722', borderWidth: 3, tension: 0.3 });
-        datasets.push({ label: pluvB, data: arrB, borderColor: '#f59e0b', backgroundColor: '#f59e0b22', borderWidth: 3, tension: 0.3 });
+        datasets.push({ label: pluvA, data: arrA, borderColor: '#0284c7', backgroundColor: '#0284c722', borderWidth: 3, tension: 0.3, spanGaps: false });
+        datasets.push({ label: pluvB, data: arrB, borderColor: '#f59e0b', backgroundColor: '#f59e0b22', borderWidth: 3, tension: 0.3, spanGaps: false });
 
       } else {
         document.getElementById('chartSubText').innerText = `Mostrando ${pluvA} (${periodo})`;
@@ -573,9 +579,10 @@
         const grupos = {};
         dataA.forEach(i => {
           const key = isAgro ? i.campana : i.anio.toString();
-          if (!grupos[key]) grupos[key] = Array(12).fill(0);
+          // Se inicializa el grupo con null
+          if (!grupos[key]) grupos[key] = Array(12).fill(null);
           const idx = monthsOrder.indexOf(i.mes);
-          if (idx !== -1) grupos[key][idx] += i.lluvia;
+          if (idx !== -1) grupos[key][idx] = (grupos[key][idx] || 0) + i.lluvia;
         });
 
         const colors = ['#0284c7', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
@@ -583,9 +590,17 @@
 
         Object.keys(grupos).forEach(grp => {
           const color = colors[cIdx++ % colors.length];
-          datasets.push({ label: isAgro ? `Campaña ${grp}` : `Año ${grp}`, data: grupos[grp], borderColor: color, borderWidth: 2, tension: 0.3 });
+          datasets.push({ 
+            label: isAgro ? `Campaña ${grp}` : `Año ${grp}`, 
+            data: grupos[grp], 
+            borderColor: color, 
+            borderWidth: 2, 
+            tension: 0.3,
+            spanGaps: false // Evita unir puntos saltándose meses vacíos
+          });
         });
       }
+      
 
       chartInstance = new Chart(ctx, {
         type: 'line',
