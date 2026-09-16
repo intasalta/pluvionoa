@@ -639,18 +639,43 @@
         modal.classList.add('hidden');
       }
     }
-    
     function resetFiltersAndShowAll() {
+      // 1. Restablecer Selectores de Ubicación
       document.getElementById('provinciaSelect').value = "Todas";
-      onProvinciaChange();
+      
+      // Refresca departamentos dejando seleccionado "Todos"
+      const deptos = ["Todos", ...new Set(globalPluviometros.map(i => i.dpto))].sort();
+      document.getElementById('deptoSelect').innerHTML = deptos.map(d => `<option value="${d}">${d}</option>`).join('');
       document.getElementById('deptoSelect').value = "Todos";
-      onDeptoChange();
+    
+      // Refresca pluviómetros dejando seleccionado "Todos" en A y "Ninguno" en B
+      const pluviometros = ["Todos", ...new Set(globalPluviometros.map(i => i.nombre))].sort();
+      document.getElementById('pluviometroSelect').innerHTML = pluviometros.map(p => `<option value="${p}">${p}</option>`).join('');
+      document.getElementById('pluviometroSelect').value = "Todos";
+    
+      const pluvBOptions = ["Ninguno", ...pluviometros.filter(p => p !== "Todos")];
+      document.getElementById('pluviometroSelectB').innerHTML = pluvBOptions.map(p => `<option value="${p}">${p}</option>`).join('');
+      document.getElementById('pluviometroSelectB').value = "Ninguno";
+    
+      // 2. Restablecer Periodos (Muestra la opción general)
+      const tipo = document.getElementById('tipoCicloSelect').value;
+      if (tipo === "agricola") {
+        document.getElementById('periodoSelect').value = "Todas las Campañas";
+      } else {
+        document.getElementById('periodoSelect').value = "Todos los Años";
+      }
+    
+      // 3. Replicar los filtros aplicados y reajustar el mapa
       applyFilters();
     
-      if (fullMarkersGroup.getLayers().length > 0) {
-        fullMap.fitBounds(fullMarkersGroup.getBounds().pad(0.1));
-      }
+      setTimeout(() => {
+        fullMap.invalidateSize();
+        if (fullMarkersGroup.getLayers().length > 0) {
+          fullMap.fitBounds(fullMarkersGroup.getBounds().pad(0.1));
+        }
+      }, 100);
     }
+    
 
     
     window.onload = () => {
