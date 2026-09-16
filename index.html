@@ -23,16 +23,6 @@
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
         }
 
-        [data-theme="light"] {
-            --bg-primary: #f8fafc;
-            --bg-card: #ffffff;
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --accent-primary: #00529c;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--bg-primary); color: var(--text-main); padding: 24px; }
 
@@ -109,7 +99,7 @@
         <table id="dataTable" style="display: none;">
             <thead>
                 <tr>
-                    <th>Fecha / Mes</th><th>Pluviómetro</th><th>Departamento</th><th>Provincia</th><th>Lluvia (mm)</th>
+                    <th>Año - Mes</th><th>Pluviómetro</th><th>Departamento</th><th>Provincia</th><th>Lluvia (mm)</th>
                 </tr>
             </thead>
             <tbody id="tableBody"></tbody>
@@ -117,9 +107,7 @@
     </div>
 
     <script>
-        // Endpoint dinámico proveniente del backend / API de procesado de datos
-        const API_ENDPOINT = "/api/submissions"; 
-        // Si estás leyendo un JSON exportado periódicamente por process_data.py, usa: const API_ENDPOINT = "./data.json";
+        const API_ENDPOINT = "./data_acumulados.json"; 
 
         let map, markersGroup;
         let globalPluviometros = [];
@@ -127,38 +115,29 @@
         function initMap() {
             map = L.map('map').setView([-24.5, -64.8], 7);
 
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-                attribution: '&copy; OpenStreetMap &copy; CARTO',
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap contributors',
                 maxZoom: 18
             }).addTo(map);
 
             markersGroup = L.layerGroup().addTo(map);
         }
 
-        // Carga dinámica de envíos/submissions
         async function fetchOnlineSubmissions() {
             try {
                 const response = await fetch(API_ENDPOINT);
                 const rawData = await response.json();
                 
-                // Formatear los envíos recibidos de la API de Kobo
-                const results = rawData.results || rawData;
-                globalPluviometros = results.map(item => {
-                    // Extraer coordenadas que Kobo ubica en '_geolocation' o dentro del array de 'geometry'
-                    let lat = null, lng = null;
-                    if (item._geolocation && item._geolocation.length >= 2) {
-                        lat = parseFloat(item._geolocation[0]);
-                        lng = parseFloat(item._geolocation[1]);
-                    }
-
+                globalPluviometros = rawData.map(item => {
+                    const mesFormateado = item.Mes < 10 ? `0${item.Mes}` : item.Mes;
                     return {
-                        nombre: item["datos_estacion/nombre_pluviolmetro"] || item["nombre_pluviometro"] || "Sin Nombre",
-                        dpto: item["datos_estacion/departamento"] || item["departamento"] || "-",
-                        prov: item["datos_estacion/provincia"] || item["provincia"] || "-",
-                        lluvia: parseFloat(item["datos_lluvia/precipitacion_mm"] || item["precipitacion"] || 0),
-                        fecha: item["_submission_time"] ? item["_submission_time"].substring(0, 10) : "-",
-                        lat: lat,
-                        lng: lng
+                        nombre: item["Pluviómetro"] || "Sin Nombre",
+                        dpto: item["Departamento"] || "-",
+                        prov: item["Provincia"] || "-",
+                        lluvia: parseFloat(item["mm"] || 0),
+                        fecha: `${item["Año"]}-${mesFormateado}`,
+                        lat: item["lat"],
+                        lng: item["lng"]
                     };
                 });
 
@@ -167,7 +146,7 @@
                 applyFilters();
 
             } catch (error) {
-                console.error("Error cargando los datos en vivo:", error);
+                console.error("Error cargando los datos:", error);
                 document.getElementById('loadingStatus').innerText = "Error cargando la red de pluviómetros.";
             }
         }
@@ -221,7 +200,7 @@
                         <div style="color: #0f172a; font-family: sans-serif;">
                             <strong style="font-size: 14px;">${item.nombre}</strong><br>
                             <small>${item.dpto}, ${item.prov}</small><br><br>
-                            Acumulado: <b style="color: #00529c;">${item.lluvia} mm</b>
+                            Acumulado: <b style="color: #00529c;">${item.lluvia.toFixed(1)} mm</b>
                         </div>
                     `);
 
