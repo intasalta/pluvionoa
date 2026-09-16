@@ -1,219 +1,412 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Pluviométrico - INTA</title>
-    <!-- Lucide Icons & Google Fonts -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Leaflet CSS y JS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Pluviométrico - INTA Salta / Jujuy</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+  
+  <!-- Feather Icons & Chart.js -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Leaflet CSS y JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    <style>
-        :root {
-            --bg-primary: #0f172a;
-            --bg-card: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border: #334155;
-            --accent-primary: #3b82f6;
-            --radius: 12px;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-        }
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: var(--bg-primary); color: var(--text-main); padding: 24px; }
-
-        .header {
-            background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
-            padding: 20px 28px; border-radius: var(--radius); border: 1px solid var(--border);
-            margin-bottom: 24px; display: flex; align-items: center; gap: 16px;
-        }
-
-        .filters-bar {
-            background: var(--bg-card); padding: 16px 24px; border-radius: var(--radius);
-            border: 1px solid var(--border); margin-bottom: 24px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap;
-        }
-
-        .filter-group { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; }
-        select, input {
-            padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border);
-            background: var(--bg-primary); color: var(--text-main); outline: none;
-        }
-
-        .map-card {
-            background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border);
-            padding: 20px; margin-bottom: 24px; box-shadow: var(--shadow);
-        }
-        #map { height: 400px; width: 100%; border-radius: 8px; border: 1px solid var(--border); }
-
-        .table-card {
-            background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border);
-            padding: 20px; box-shadow: var(--shadow); overflow-x: auto;
-        }
-        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
-        th { padding: 12px 16px; background: var(--bg-primary); color: var(--text-muted); border-bottom: 2px solid var(--border); }
-        td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
-        .precip-val { font-weight: 700; color: var(--accent-primary); }
-        .loading-text { font-size: 14px; color: var(--text-muted); padding: 10px 0; }
-    </style>
+  <script>
+    if (localStorage.theme === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
 </head>
-<body>
+<body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 antialiased min-h-screen flex flex-col justify-between transition-colors duration-300">
 
-    <div class="header">
-        <i data-lucide="cloud-rain" style="width:36px; height:36px; color: var(--accent-primary);"></i>
+  <!-- HEADER INSTITUCIONAL -->
+  <header class="bg-gradient-to-r from-[#0B7BAF] via-[#08618B] to-[#054869] text-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      
+      <div class="flex items-center space-x-4">
+        <img src="./logo_inta.png" alt="Logo INTA" class="h-14 bg-white p-1 rounded-lg shadow-md transition-transform hover:scale-105">
         <div>
-            <h1 style="font-size: 22px;">Acumulados Pluviométricos Dinámicos</h1>
-            <p style="font-size: 13px; color: var(--text-muted);">Monitoreo en tiempo real - INTA Salta / Jujuy</p>
+          <h1 class="text-lg sm:text-xl font-bold tracking-tight">Acumulados Pluviométricos Dinámicos</h1>
+          <p class="text-blue-200 text-xs font-medium">Monitoreo en Tiempo Real - INTA Salta / Jujuy</p>
         </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" type="button" aria-label="Cambiar Tema" class="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-blue-100 border border-white/20 transition-all focus:outline-none focus:ring-2 focus:ring-white/50">
+          <i id="theme-toggle-dark-icon" data-feather="moon" class="hidden h-5 w-5"></i>
+          <i id="theme-toggle-light-icon" data-feather="sun" class="hidden h-5 w-5 text-amber-300"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-6">
+
+    <!-- BARRA DE FILTROS -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-4 md:p-6 border border-slate-200 dark:border-slate-700/60 transition-colors">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Provincia -->
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Provincia</label>
+          <select id="provinciaSelect" onchange="onProvinciaChange()" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-2.5 text-sm">
+            <option value="Todas">Todas</option>
+          </select>
+        </div>
+
+        <!-- Departamento -->
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Departamento</label>
+          <select id="deptoSelect" onchange="onDeptoChange()" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-2.5 text-sm">
+            <option value="Todos">Todos</option>
+          </select>
+        </div>
+
+        <!-- Pluviómetro -->
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Pluviómetro</label>
+          <select id="pluviometroSelect" onchange="applyFilters()" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-2.5 text-sm">
+            <option value="Todos">Todos</option>
+          </select>
+        </div>
+
+        <!-- Buscar libremente -->
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Buscar</label>
+          <input type="text" id="searchInput" onkeyup="applyFilters()" placeholder="Buscar..." class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-2.5 text-sm">
+        </div>
+
+      </div>
     </div>
 
-    <div class="filters-bar">
-        <div class="filter-group">
-            <label><i data-lucide="map-pin"></i> Provincia:</label>
-            <select id="provinceSelect" onchange="applyFilters()">
-                <option value="Todas">Todas</option>
-                <option value="Salta" selected>Salta</option>
-                <option value="Jujuy">Jujuy</option>
-            </select>
-        </div>
-        <div class="filter-group" style="margin-left: auto;">
-            <label><i data-lucide="search"></i> Buscar:</label>
-            <input type="text" id="searchInput" onkeyup="applyFilters()" placeholder="Filtrar por pluviómetro...">
-        </div>
-    </div>
+    <!-- SECCIÓN GRÁFICO DE PROGRESIÓN (AGOS - JUL) Y MAPA -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-    <!-- Mapa -->
-    <div class="map-card">
-        <h3 style="font-size: 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-            <i data-lucide="map"></i> Red de Pluviómetros Activos
+      <!-- GRÁFICO POR AÑO AGRÍCOLA -->
+      <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700/60 p-5 flex flex-col justify-between transition-colors">
+        <div>
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2">
+              <i data-feather="bar-chart-2" class="h-5 w-5 text-sky-500"></i> Progresión por Año Agrícola (Ago - Jul)
+            </h3>
+          </div>
+          <p id="chartSubText" class="text-xs text-slate-400 mb-4">Seleccione un pluviómetro específico para ver el detalle por campaña.</p>
+          
+          <div class="relative h-72 w-full">
+            <canvas id="precipChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAPA -->
+      <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700/60 p-5 transition-colors">
+        <h3 class="font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2 mb-4">
+          <i data-feather="map-pin" class="h-5 w-5 text-sky-500"></i> Ubicación de Pluviómetros
         </h3>
-        <div id="map"></div>
+        <div id="map" class="h-72 w-full rounded-xl border border-slate-200 dark:border-slate-700"></div>
+      </div>
+
     </div>
 
-    <!-- Tabla -->
-    <div class="table-card">
-        <div id="loadingStatus" class="loading-text">Obteniendo datos de KoboToolbox...</div>
-        <table id="dataTable" style="display: none;">
-            <thead>
-                <tr>
-                    <th>Año - Mes</th><th>Pluviómetro</th><th>Departamento</th><th>Provincia</th><th>Lluvia (mm)</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody"></tbody>
+    <!-- TABLA DE REGISTROS -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700/60 overflow-hidden p-5 transition-colors">
+      <div id="loadingStatus" class="text-slate-400 text-sm py-4 text-center">Cargando datos...</div>
+      
+      <div class="overflow-x-auto">
+        <table id="dataTable" class="w-full text-left text-sm" style="display: none;">
+          <thead class="bg-slate-50 dark:bg-slate-900/50 text-slate-400 font-semibold uppercase text-xs">
+            <tr>
+              <th class="py-3 px-4">Año - Mes</th>
+              <th class="py-3 px-4">Pluviómetro</th>
+              <th class="py-3 px-4">Departamento</th>
+              <th class="py-3 px-4">Provincia</th>
+              <th class="py-3 px-4 text-right">Lluvia (mm)</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody" class="divide-y divide-slate-100 dark:divide-slate-700/50 text-slate-600 dark:text-slate-300">
+          </tbody>
         </table>
+      </div>
     </div>
 
-    <script>
-        const API_ENDPOINT = "./data_acumulados.json"; 
+  </main>
 
-        let map, markersGroup;
-        let globalPluviometros = [];
+  <!-- FOOTER INSTITUCIONAL -->
+  <footer class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700/60 py-8 mt-6 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <div class="flex justify-center items-center">
+        <a href="https://www.argentina.gob.ar/economia" target="_blank">
+          <img src="./MECON-Agricultura-BLANCO.png" alt="Secretaría de Agricultura, Ganadería y Pesca" class="h-16 md:h-20 w-auto opacity-90 hover:opacity-100 transition dark:block hidden">
+          <img src="./MECON-Agricultura-BLANCO.png" alt="Secretaría de Agricultura, Ganadería y Pesca" class="h-16 md:h-20 w-auto opacity-90 hover:opacity-100 transition dark:hidden block filter invert">
+        </a>
+      </div>
+    </div>
+  </footer>
 
-        function initMap() {
-            map = L.map('map').setView([-24.5, -64.8], 7);
+  <script>
+    const API_ENDPOINT = "./data_acumulados.json";
+    let globalPluviometros = [];
+    let map, markersGroup;
+    let chartInstance = null;
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; OpenStreetMap contributors',
-                maxZoom: 18
-            }).addTo(map);
+    // Inicializar mapa Leaflet
+    function initMap() {
+      map = L.map('map').setView([-24.5, -64.8], 7);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+      markersGroup = L.layerGroup().addTo(map);
+    }
 
-            markersGroup = L.layerGroup().addTo(map);
+    // Cargar datos del JSON local
+    async function loadData() {
+      try {
+        const response = await fetch(API_ENDPOINT);
+        const rawData = await response.json();
+
+        globalPluviometros = rawData.map(item => {
+          const mesNum = parseInt(item.Mes);
+          const anioNum = parseInt(item.Año);
+          
+          // Cálculo de Año Agrícola (Campaña Ago-Jul)
+          const campana = mesNum >= 8 ? `${anioNum}/${anioNum + 1}` : `${anioNum - 1}/${anioNum}`;
+
+          return {
+            nombre: item["Pluviómetro"] || "Sin Nombre",
+            dpto: item["Departamento"] || "S/D",
+            prov: item["Provincia"] || "S/D",
+            lluvia: parseFloat(item["mm"] || 0),
+            anio: anioNum,
+            mes: mesNum,
+            campana: campana,
+            fecha: `${anioNum}-${mesNum < 10 ? '0' + mesNum : mesNum}`,
+            lat: item["lat"],
+            lng: item["lng"]
+          };
+        });
+
+        populateDropdowns();
+        document.getElementById('loadingStatus').style.display = 'none';
+        document.getElementById('dataTable').style.display = 'table';
+        applyFilters();
+
+      } catch (e) {
+        console.error(e);
+        document.getElementById('loadingStatus').innerText = "Error cargando los datos.";
+      }
+    }
+
+    // Poblar desplegables dinámicamente
+    function populateDropdowns() {
+      const provincias = ["Todas", ...new Set(globalPluviometros.map(i => i.prov))].sort();
+      const provSelect = document.getElementById('provinciaSelect');
+      provSelect.innerHTML = provincias.map(p => `<option value="${p}">${p}</option>`).join('');
+
+      onProvinciaChange();
+    }
+
+    function onProvinciaChange() {
+      const selProv = document.getElementById('provinciaSelect').value;
+      const deptos = ["Todos", ...new Set(
+        globalPluviometros
+          .filter(i => selProv === "Todas" || i.prov === selProv)
+          .map(i => i.dpto)
+      )].sort();
+
+      const deptoSelect = document.getElementById('deptoSelect');
+      deptoSelect.innerHTML = deptos.map(d => `<option value="${d}">${d}</option>`).join('');
+
+      onDeptoChange();
+    }
+
+    function onDeptoChange() {
+      const selProv = document.getElementById('provinciaSelect').value;
+      const selDepto = document.getElementById('deptoSelect').value;
+
+      const pluviometros = ["Todos", ...new Set(
+        globalPluviometros
+          .filter(i => (selProv === "Todas" || i.prov === selProv) && (selDepto === "Todos" || i.dpto === selDepto))
+          .map(i => i.nombre)
+      )].sort();
+
+      const pluvSelect = document.getElementById('pluviometroSelect');
+      pluvSelect.innerHTML = pluviometros.map(p => `<option value="${p}">${p}</option>`).join('');
+
+      applyFilters();
+    }
+
+    // Aplicar filtros
+    function applyFilters() {
+      const prov = document.getElementById('provinciaSelect').value;
+      const depto = document.getElementById('deptoSelect').value;
+      const pluv = document.getElementById('pluviometroSelect').value;
+      const search = document.getElementById('searchInput').value.toLowerCase();
+
+      const filtered = globalPluviometros.filter(i => {
+        const matchProv = prov === "Todas" || i.prov === prov;
+        const matchDepto = depto === "Todos" || i.dpto === depto;
+        const matchPluv = pluv === "Todos" || i.nombre === pluv;
+        const matchSearch = i.nombre.toLowerCase().includes(search) || i.dpto.toLowerCase().includes(search);
+
+        return matchProv && matchDepto && matchPluv && matchSearch;
+      });
+
+      renderTable(filtered);
+      renderMap(filtered);
+      renderChart(filtered, pluv);
+    }
+
+    // Renderizar Tabla
+    function renderTable(data) {
+      const tbody = document.getElementById('tableBody');
+      tbody.innerHTML = data.map(i => `
+        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700/50">
+          <td class="py-2.5 px-4">${i.fecha}</td>
+          <td class="py-2.5 px-4 font-bold">${i.nombre}</td>
+          <td class="py-2.5 px-4">${i.dpto}</td>
+          <td class="py-2.5 px-4">${i.prov}</td>
+          <td class="py-2.5 px-4 text-right font-bold text-sky-600 dark:text-sky-400">${i.lluvia.toFixed(1)} mm</td>
+        </tr>
+      `).join('');
+    }
+
+    // Renderizar Mapa
+    function renderMap(data) {
+      markersGroup.clearLayers();
+      const uniqueStations = [];
+      const mapKeys = new Set();
+
+      data.forEach(i => {
+        if (i.lat && i.lng && !mapKeys.has(i.nombre)) {
+          mapKeys.add(i.nombre);
+          uniqueStations.push(i);
         }
+      });
 
-        async function fetchOnlineSubmissions() {
-            try {
-                const response = await fetch(API_ENDPOINT);
-                const rawData = await response.json();
-                
-                globalPluviometros = rawData.map(item => {
-                    const mesFormateado = item.Mes < 10 ? `0${item.Mes}` : item.Mes;
-                    return {
-                        nombre: item["Pluviómetro"] || "Sin Nombre",
-                        dpto: item["Departamento"] || "-",
-                        prov: item["Provincia"] || "-",
-                        lluvia: parseFloat(item["mm"] || 0),
-                        fecha: `${item["Año"]}-${mesFormateado}`,
-                        lat: item["lat"],
-                        lng: item["lng"]
-                    };
-                });
+      uniqueStations.forEach(i => {
+        const marker = L.circleMarker([i.lat, i.lng], {
+          radius: 7,
+          fillColor: "#0284c7",
+          color: "#ffffff",
+          weight: 2,
+          fillOpacity: 0.9
+        });
 
-                document.getElementById('loadingStatus').style.display = 'none';
-                document.getElementById('dataTable').style.display = 'table';
-                applyFilters();
+        marker.bindPopup(`<b>${i.nombre}</b><br>${i.dpto}, ${i.prov}`);
+        markersGroup.addLayer(marker);
+      });
+    }
 
-            } catch (error) {
-                console.error("Error cargando los datos:", error);
-                document.getElementById('loadingStatus').innerText = "Error cargando la red de pluviómetros.";
-            }
+    // Renderizar Gráfico de Progresión (Agosto - Julio)
+    function renderChart(data, selectedPluv) {
+      const ctx = document.getElementById('precipChart').getContext('2d');
+      const monthsOrder = [8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7];
+      const monthNames = ["Ago", "Sep", "Oct", "Nov", "Dic", "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul"];
+
+      if (chartInstance) chartInstance.destroy();
+
+      if (selectedPluv === "Todos") {
+        document.getElementById('chartSubText').innerText = "Seleccione un pluviómetro específico arriba para ver el detalle de la campaña.";
+        return;
+      }
+
+      document.getElementById('chartSubText').innerText = `Mostrando campaña agroclimática para: ${selectedPluv}`;
+
+      // Agrupar datos por Campaña
+      const campañas = {};
+      data.forEach(i => {
+        if (!campañas[i.campana]) {
+          campañas[i.campana] = Array(12).fill(0);
         }
-
-        function applyFilters() {
-            const selectedProv = document.getElementById('provinceSelect').value;
-            const searchVal = document.getElementById('searchInput').value.toLowerCase();
-
-            const filtered = globalPluviometros.filter(item => {
-                const matchProv = selectedProv === "Todas" || item.prov.toLowerCase().includes(selectedProv.toLowerCase());
-                const matchSearch = item.nombre.toLowerCase().includes(searchVal) || item.dpto.toLowerCase().includes(searchVal);
-                return matchProv && matchSearch;
-            });
-
-            renderTable(filtered);
-            renderMapMarkers(filtered);
+        const index = monthsOrder.indexOf(i.mes);
+        if (index !== -1) {
+          campañas[i.campana][index] += i.lluvia;
         }
+      });
 
-        function renderTable(data) {
-            const tbody = document.getElementById('tableBody');
-            tbody.innerHTML = '';
+      const colors = ['#0284c7', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899'];
+      let colorIndex = 0;
 
-            data.forEach(item => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td>${item.fecha}</td>
-                    <td><strong>${item.nombre}</strong></td>
-                    <td>${item.dpto}</td>
-                    <td>${item.prov}</td>
-                    <td class="precip-val">${item.lluvia.toFixed(1)} mm</td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        function renderMapMarkers(data) {
-            markersGroup.clearLayers();
-
-            data.forEach(item => {
-                if (item.lat && item.lng) {
-                    const marker = L.circleMarker([item.lat, item.lng], {
-                        radius: 8,
-                        fillColor: "#3b82f6",
-                        color: "#ffffff",
-                        weight: 2,
-                        opacity: 1,
-                        fillOpacity: 0.85
-                    });
-
-                    marker.bindPopup(`
-                        <div style="color: #0f172a; font-family: sans-serif;">
-                            <strong style="font-size: 14px;">${item.nombre}</strong><br>
-                            <small>${item.dpto}, ${item.prov}</small><br><br>
-                            Acumulado: <b style="color: #00529c;">${item.lluvia.toFixed(1)} mm</b>
-                        </div>
-                    `);
-
-                    markersGroup.addLayer(marker);
-                }
-            });
-        }
-
-        window.onload = () => {
-            lucide.createIcons();
-            initMap();
-            fetchOnlineSubmissions();
+      const datasets = Object.keys(campañas).map(camp => {
+        const color = colors[colorIndex++ % colors.length];
+        return {
+          label: `Campaña ${camp}`,
+          data: campañas[camp],
+          borderColor: color,
+          backgroundColor: color + '22',
+          borderWidth: 2,
+          tension: 0.3,
+          fill: false
         };
-    </script>
+      });
+
+      chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: monthNames,
+          datasets: datasets
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'bottom', labels: { boxWidth: 12, color: '#94a3b8' } }
+          },
+          scales: {
+            x: { ticks: { color: '#94a3b8' }, grid: { display: false } },
+            y: { ticks: { color: '#94a3b8' }, grid: { color: '#3341551A' } }
+          }
+        }
+      });
+    }
+
+    // Lógica del Botón Tema
+    window.onload = () => {
+      feather.replace();
+      initMap();
+      loadData();
+
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const darkIcon = document.getElementById('theme-toggle-dark-icon');
+      const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+      if (document.documentElement.classList.contains('dark')) {
+        lightIcon.classList.remove('hidden');
+      } else {
+        darkIcon.classList.remove('hidden');
+      }
+
+      themeToggleBtn.addEventListener('click', () => {
+        darkIcon.classList.toggle('hidden');
+        lightIcon.classList.toggle('hidden');
+
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    };
+  </script>
 </body>
 </html>
