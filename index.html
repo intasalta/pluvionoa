@@ -157,10 +157,17 @@
       </div>
 
       <!-- MAPA (Contenedor aislado en z-0 para evitar que Leaflet se monte sobre el modal) -->
+      <!-- MAPA -->
       <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700/60 p-5 transition-colors relative z-0 isolate">
-        <h3 class="font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2 mb-4">
-          <i data-feather="map-pin" class="h-5 w-5 text-sky-500"></i> Ubicación de Pluviómetros
-        </h3>
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2">
+            <i data-feather="map-pin" class="h-5 w-5 text-sky-500"></i> Ubicación de Pluviómetros
+          </h3>
+          <!-- BOTÓN PARA ABRIR MAPA MODAL -->
+          <button onclick="toggleMapModal(true)" type="button" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-xs font-semibold transition-all">
+            <i data-feather="maximize-2" class="h-3.5 w-3.5"></i> Ver Mapa Completo
+          </button>
+        </div>
         <div id="map" class="h-72 w-full rounded-xl border border-slate-200 dark:border-slate-700 relative z-0"></div>
       </div>
 
@@ -282,6 +289,39 @@
     </div>
   </div>
 
+  <!-- MODAL POPUP: MAPA COMPLETO -->
+  <div id="mapModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[9999] hidden flex flex-col p-4 sm:p-6 transition-opacity duration-300">
+    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl w-full h-full flex flex-col shadow-2xl overflow-hidden">
+      
+      <!-- Header del Modal -->
+      <div class="p-4 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center bg-slate-50 dark:bg-slate-900/50">
+        <div class="flex items-center gap-2">
+          <i data-feather="map" class="h-5 w-5 text-sky-600 dark:text-sky-400"></i>
+          <h2 class="text-base font-bold text-slate-800 dark:text-slate-100">Red Pluviométrica - Vista Completa</h2>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <!-- BOTÓN RÁPIDO PARA RESETEAR FILTROS Y VER TODOS -->
+          <button onclick="resetFiltersAndShowAll()" type="button" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold transition-all shadow-sm">
+            <i data-feather="refresh-cw" class="h-3.5 w-3.5"></i>
+            <span>Mostrar Todos los Pluviómetros</span>
+          </button>
+
+          <button onclick="toggleMapModal(false)" type="button" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors">
+            <i data-feather="x" class="h-6 w-6"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mapa Gigante -->
+      <div class="relative flex-1 w-full h-full">
+        <div id="fullMap" class="w-full h-full"></div>
+      </div>
+
+    </div>
+  </div>
+
+  
   <!-- FOOTER INSTITUCIONAL -->
   <footer class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700/60 py-8 mt-6 transition-colors">
     <div class="max-w-7xl mx-auto px-4 text-center">
@@ -296,7 +336,9 @@
     const API_ENDPOINT = "./data_acumulados.json";
     let globalPluviometros = [];
     let currentFilteredData = [];
+     
     let map, markersGroup;
+    let fullMap, fullMarkersGroup;
     let chartInstance = null;
 
     function toggleModal(show) {
@@ -309,11 +351,19 @@
     }
 
     function initMap() {
+      // Mapa de la pantalla principal
       map = L.map('map').setView([-24.5, -64.8], 7);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
       }).addTo(map);
       markersGroup = L.layerGroup().addTo(map);
+    
+      // Mapa modal a pantalla completa
+      fullMap = L.map('fullMap').setView([-24.5, -64.8], 7);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(fullMap);
+      fullMarkersGroup = L.layerGroup().addTo(fullMap);
     }
 
     async function loadData() {
@@ -443,16 +493,26 @@
 
     function renderMap(data) {
       markersGroup.clearLayers();
+      fullMarkersGroup.clearLayers();
       const mapKeys = new Set();
-
+    
       data.forEach(i => {
         if (i.lat && i.lng && !mapKeys.has(i.nombre)) {
           mapKeys.add(i.nombre);
+          
+          const popupText = `<b>${i.nombre}</b><br>${i.dpto}, ${i.prov}`;
+    
+          // Marcador Mapa Chico
           const marker = L.circleMarker([i.lat, i.lng], {
             radius: 7, fillColor: "#0284c7", color: "#ffffff", weight: 2, fillOpacity: 0.9
-          });
-          marker.bindPopup(`<b>${i.nombre}</b><br>${i.dpto}, ${i.prov}`);
+          }).bindPopup(popupText);
           markersGroup.addLayer(marker);
+    
+          // Marcador Mapa Full
+          const fullMarker = L.circleMarker([i.lat, i.lng], {
+            radius: 8, fillColor: "#0284c7", color: "#ffffff", weight: 2, fillOpacity: 0.9
+          }).bindPopup(popupText);
+          fullMarkersGroup.addLayer(fullMarker);
         }
       });
     }
@@ -564,6 +624,35 @@
       a.click();
     }
 
+    function toggleMapModal(show) {
+      const modal = document.getElementById('mapModal');
+      if (show) {
+        modal.classList.remove('hidden');
+        // Forzamos al mapa a recalculase para evitar que cargue gris o desalineado
+        setTimeout(() => {
+          fullMap.invalidateSize();
+          if (fullMarkersGroup.getLayers().length > 0) {
+            fullMap.fitBounds(fullMarkersGroup.getBounds().pad(0.1));
+          }
+        }, 200);
+      } else {
+        modal.classList.add('hidden');
+      }
+    }
+    
+    function resetFiltersAndShowAll() {
+      document.getElementById('provinciaSelect').value = "Todas";
+      onProvinciaChange();
+      document.getElementById('deptoSelect').value = "Todos";
+      onDeptoChange();
+      applyFilters();
+    
+      if (fullMarkersGroup.getLayers().length > 0) {
+        fullMap.fitBounds(fullMarkersGroup.getBounds().pad(0.1));
+      }
+    }
+
+    
     window.onload = () => {
       feather.replace();
       initMap();
