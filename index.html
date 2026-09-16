@@ -86,7 +86,7 @@
         <div>
           <label class="block text-xs font-bold uppercase text-sky-600 dark:text-sky-400 mb-1">Ciclo</label>
           <select id="tipoCicloSelect" onchange="onTipoCicloChange()" class="w-full bg-slate-50 dark:bg-slate-900 border border-sky-300 dark:border-sky-700 rounded-xl p-2.5 text-sm font-semibold">
-            <option value="agricola">Agrícola (Ago-Jul)</option>
+            <option value="agricola">Agrícola (Sep-Ago)</option>
             <option value="calendario">Calendario (Ene-Dic)</option>
           </select>
         </div>
@@ -324,7 +324,8 @@
         globalPluviometros = rawData.map(item => {
           const mesNum = parseInt(item.Mes);
           const anioNum = parseInt(item.Año);
-          const campana = mesNum >= 8 ? `${anioNum}/${anioNum + 1}` : `${anioNum - 1}/${anioNum}`;
+         
+          const campana = mesNum >= 9 ? `${anioNum}/${anioNum + 1}` : `${anioNum - 1}/${anioNum}`;
 
           return {
             nombre: item["Pluviómetro"] || "Sin Nombre",
@@ -461,12 +462,15 @@
       if (chartInstance) chartInstance.destroy();
 
       const isAgro = tipoCiclo === "agricola";
-      const monthsOrder = isAgro ? [8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7] : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+      // CÓDIGO NUEVO
+      const monthsOrder = isAgro ? [9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8] : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
       const monthNames = isAgro 
-        ? ["Ago", "Sep", "Oct", "Nov", "Dic", "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul"]
+        ? ["Sep", "Oct", "Nov", "Dic", "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago"]
         : ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
 
-      document.getElementById('chartTitle').innerHTML = `<i data-feather="bar-chart-2" class="h-5 w-5 text-sky-500"></i> Progresión (${isAgro ? 'Ago - Jul' : 'Ene - Dic'})`;
+      
+      // CÓDIGO NUEVO
+      document.getElementById('chartTitle').innerHTML = `<i data-feather="bar-chart-2" class="h-5 w-5 text-sky-500"></i> Progresión (${isAgro ? 'Sep - Ago' : 'Ene - Dic'})`;
       feather.replace();
 
       const dataA = data.filter(i => pluvA !== "Todos" ? i.nombre === pluvA : true);
