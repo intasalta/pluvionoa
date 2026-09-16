@@ -5,25 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Pluviométrico - INTA Salta / Jujuy</title>
   
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { darkMode: 'class' }
   </script>
   
-  <!-- Feather Icons & Chart.js -->
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Leaflet CSS y JS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <style>
     body { font-family: 'Inter', sans-serif; }
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 
   <script>
@@ -39,7 +34,6 @@
   <!-- HEADER INSTITUCIONAL -->
   <header class="bg-gradient-to-r from-[#0B7BAF] via-[#08618B] to-[#054869] text-white shadow-lg sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      
       <div class="flex items-center space-x-4">
         <img src="./logo_inta.png" alt="Logo INTA" class="h-14 bg-white p-1 rounded-lg shadow-md transition-transform hover:scale-105">
         <div>
@@ -49,7 +43,7 @@
       </div>
 
       <div class="flex items-center gap-3">
-        <button id="theme-toggle" type="button" aria-label="Cambiar Tema" class="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-blue-100 border border-white/20 transition-all focus:outline-none focus:ring-2 focus:ring-white/50">
+        <button id="theme-toggle" type="button" class="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-blue-100 border border-white/20 transition-all">
           <i id="theme-toggle-dark-icon" data-feather="moon" class="hidden h-5 w-5"></i>
           <i id="theme-toggle-light-icon" data-feather="sun" class="hidden h-5 w-5 text-amber-300"></i>
         </button>
@@ -62,9 +56,8 @@
 
     <!-- BARRA DE FILTROS -->
     <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-4 md:p-6 border border-slate-200 dark:border-slate-700/60 transition-colors">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         
-        <!-- Provincia -->
         <div>
           <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Provincia</label>
           <select id="provinciaSelect" onchange="onProvinciaChange()" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-2.5 text-sm">
@@ -72,7 +65,6 @@
           </select>
         </div>
 
-        <!-- Departamento -->
         <div>
           <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Departamento</label>
           <select id="deptoSelect" onchange="onDeptoChange()" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-2.5 text-sm">
@@ -80,15 +72,21 @@
           </select>
         </div>
 
-        <!-- Pluviómetro -->
         <div>
-          <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Pluviómetro</label>
+          <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Pluviómetro A (Principal)</label>
           <select id="pluviometroSelect" onchange="applyFilters()" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-2.5 text-sm">
             <option value="Todos">Todos</option>
           </select>
         </div>
 
-        <!-- Buscar libremente -->
+        <!-- 1. COMPARACIÓN CON SEGUNDO PLUVIÓMETRO -->
+        <div>
+          <label class="block text-xs font-bold uppercase text-sky-600 dark:text-sky-400 mb-1">Pluviómetro B (Comparar)</label>
+          <select id="pluviometroSelectB" onchange="applyFilters()" class="w-full bg-slate-50 dark:bg-slate-900 border border-sky-300 dark:border-sky-700 rounded-xl p-2.5 text-sm">
+            <option value="Ninguno">Ninguno</option>
+          </select>
+        </div>
+
         <div>
           <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Buscar</label>
           <input type="text" id="searchInput" onkeyup="applyFilters()" placeholder="Buscar..." class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-2.5 text-sm">
@@ -97,18 +95,40 @@
       </div>
     </div>
 
-    <!-- SECCIÓN GRÁFICO DE PROGRESIÓN (AGOS - JUL) Y MAPA -->
+    <!-- TARJETA COMPARATIVA (INDICADORES) -->
+    <div id="comparativaCard" class="hidden bg-sky-50 dark:bg-sky-950/30 border border-sky-200 dark:border-sky-800/50 rounded-2xl p-4 transition-colors">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+        <div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 font-medium" id="nombrePluvA">Pluviómetro A</p>
+          <p class="text-xl font-bold text-sky-600 dark:text-sky-400" id="totalPluvA">0.0 mm</p>
+        </div>
+        <div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 font-medium" id="nombrePluvB">Pluviómetro B</p>
+          <p class="text-xl font-bold text-amber-500" id="totalPluvB">0.0 mm</p>
+        </div>
+        <div class="flex flex-col justify-center">
+          <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Diferencia de Lluvia</p>
+          <p class="text-lg font-extrabold" id="diferenciaMm">0.0 mm</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN GRÁFICO Y MAPA -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-      <!-- GRÁFICO POR AÑO AGRÍCOLA -->
+      <!-- GRÁFICO CON DESCARGA -->
       <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700/60 p-5 flex flex-col justify-between transition-colors">
         <div>
-          <div class="flex justify-between items-center mb-4">
+          <div class="flex justify-between items-center mb-2">
             <h3 class="font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2">
               <i data-feather="bar-chart-2" class="h-5 w-5 text-sky-500"></i> Progresión por Año Agrícola (Ago - Jul)
             </h3>
+            <!-- 5. DESCARGAR GRÁFICO COMO PNG -->
+            <button onclick="downloadChartPNG()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-xs font-semibold transition-all">
+              <i data-feather="image" class="h-3.5 w-3.5"></i> Guardar Gráfico
+            </button>
           </div>
-          <p id="chartSubText" class="text-xs text-slate-400 mb-4">Seleccione un pluviómetro específico para ver el detalle por campaña.</p>
+          <p id="chartSubText" class="text-xs text-slate-400 mb-4">Seleccione un pluviómetro para ver la progresión.</p>
           
           <div class="relative h-72 w-full">
             <canvas id="precipChart"></canvas>
@@ -126,8 +146,16 @@
 
     </div>
 
-    <!-- TABLA DE REGISTROS -->
+    <!-- TABLA DE REGISTROS Y DESCARGA CSV -->
     <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700/60 overflow-hidden p-5 transition-colors">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="font-bold text-slate-700 dark:text-slate-200">Registros Históricos (Desde 2024)</h3>
+        <!-- 5. DESCARGAR REPORTE EN CSV -->
+        <button onclick="downloadCSV()" class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold transition-all shadow-sm">
+          <i data-feather="download" class="h-4 w-4"></i> Exportar Reporte (CSV)
+        </button>
+      </div>
+
       <div id="loadingStatus" class="text-slate-400 text-sm py-4 text-center">Cargando datos...</div>
       
       <div class="overflow-x-auto">
@@ -152,22 +180,20 @@
   <!-- FOOTER INSTITUCIONAL -->
   <footer class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700/60 py-8 mt-6 transition-colors">
     <div class="max-w-7xl mx-auto px-4 text-center">
-      <div class="flex justify-center items-center">
-        <a href="https://www.argentina.gob.ar/economia" target="_blank">
-          <img src="./MECON-Agricultura-BLANCO.png" alt="Secretaría de Agricultura, Ganadería y Pesca" class="h-16 md:h-20 w-auto opacity-90 hover:opacity-100 transition dark:block hidden">
-          <img src="./MECON-Agricultura-BLANCO.png" alt="Secretaría de Agricultura, Ganadería y Pesca" class="h-16 md:h-20 w-auto opacity-90 hover:opacity-100 transition dark:hidden block filter invert">
-        </a>
-      </div>
+      <a href="https://www.argentina.gob.ar/economia" target="_blank">
+        <img src="./MECON-Agricultura-BLANCO.png" alt="Secretaría de Agricultura" class="h-16 md:h-20 w-auto mx-auto dark:block hidden">
+        <img src="./MECON-Agricultura-BLANCO.png" alt="Secretaría de Agricultura" class="h-16 md:h-20 w-auto mx-auto dark:hidden block filter invert">
+      </a>
     </div>
   </footer>
 
   <script>
     const API_ENDPOINT = "./data_acumulados.json";
     let globalPluviometros = [];
+    let currentFilteredData = [];
     let map, markersGroup;
     let chartInstance = null;
 
-    // Inicializar mapa Leaflet
     function initMap() {
       map = L.map('map').setView([-24.5, -64.8], 7);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -176,7 +202,6 @@
       markersGroup = L.layerGroup().addTo(map);
     }
 
-    // Cargar datos del JSON local
     async function loadData() {
       try {
         const response = await fetch(API_ENDPOINT);
@@ -185,8 +210,6 @@
         globalPluviometros = rawData.map(item => {
           const mesNum = parseInt(item.Mes);
           const anioNum = parseInt(item.Año);
-          
-          // Cálculo de Año Agrícola (Campaña Ago-Jul)
           const campana = mesNum >= 8 ? `${anioNum}/${anioNum + 1}` : `${anioNum - 1}/${anioNum}`;
 
           return {
@@ -214,26 +237,19 @@
       }
     }
 
-    // Poblar desplegables dinámicamente
     function populateDropdowns() {
       const provincias = ["Todas", ...new Set(globalPluviometros.map(i => i.prov))].sort();
-      const provSelect = document.getElementById('provinciaSelect');
-      provSelect.innerHTML = provincias.map(p => `<option value="${p}">${p}</option>`).join('');
-
+      document.getElementById('provinciaSelect').innerHTML = provincias.map(p => `<option value="${p}">${p}</option>`).join('');
       onProvinciaChange();
     }
 
     function onProvinciaChange() {
       const selProv = document.getElementById('provinciaSelect').value;
       const deptos = ["Todos", ...new Set(
-        globalPluviometros
-          .filter(i => selProv === "Todas" || i.prov === selProv)
-          .map(i => i.dpto)
+        globalPluviometros.filter(i => selProv === "Todas" || i.prov === selProv).map(i => i.dpto)
       )].sort();
 
-      const deptoSelect = document.getElementById('deptoSelect');
-      deptoSelect.innerHTML = deptos.map(d => `<option value="${d}">${d}</option>`).join('');
-
+      document.getElementById('deptoSelect').innerHTML = deptos.map(d => `<option value="${d}">${d}</option>`).join('');
       onDeptoChange();
     }
 
@@ -247,37 +263,37 @@
           .map(i => i.nombre)
       )].sort();
 
-      const pluvSelect = document.getElementById('pluviometroSelect');
-      pluvSelect.innerHTML = pluviometros.map(p => `<option value="${p}">${p}</option>`).join('');
+      document.getElementById('pluviometroSelect').innerHTML = pluviometros.map(p => `<option value="${p}">${p}</option>`).join('');
+      
+      const pluvBOptions = ["Ninguno", ...pluviometros.filter(p => p !== "Todos")];
+      document.getElementById('pluviometroSelectB').innerHTML = pluvBOptions.map(p => `<option value="${p}">${p}</option>`).join('');
 
       applyFilters();
     }
 
-    // Aplicar filtros
     function applyFilters() {
       const prov = document.getElementById('provinciaSelect').value;
       const depto = document.getElementById('deptoSelect').value;
-      const pluv = document.getElementById('pluviometroSelect').value;
+      const pluvA = document.getElementById('pluviometroSelect').value;
+      const pluvB = document.getElementById('pluviometroSelectB').value;
       const search = document.getElementById('searchInput').value.toLowerCase();
 
-      const filtered = globalPluviometros.filter(i => {
+      currentFilteredData = globalPluviometros.filter(i => {
         const matchProv = prov === "Todas" || i.prov === prov;
         const matchDepto = depto === "Todos" || i.dpto === depto;
-        const matchPluv = pluv === "Todos" || i.nombre === pluv;
+        const matchPluv = (pluvA === "Todos" && pluvB === "Ninguno") || i.nombre === pluvA || i.nombre === pluvB;
         const matchSearch = i.nombre.toLowerCase().includes(search) || i.dpto.toLowerCase().includes(search);
 
         return matchProv && matchDepto && matchPluv && matchSearch;
       });
 
-      renderTable(filtered);
-      renderMap(filtered);
-      renderChart(filtered, pluv);
+      renderTable(currentFilteredData);
+      renderMap(currentFilteredData);
+      renderChart(currentFilteredData, pluvA, pluvB);
     }
 
-    // Renderizar Tabla
     function renderTable(data) {
-      const tbody = document.getElementById('tableBody');
-      tbody.innerHTML = data.map(i => `
+      document.getElementById('tableBody').innerHTML = data.map(i => `
         <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700/50">
           <td class="py-2.5 px-4">${i.fecha}</td>
           <td class="py-2.5 px-4 font-bold">${i.nombre}</td>
@@ -288,7 +304,6 @@
       `).join('');
     }
 
-    // Renderizar Mapa
     function renderMap(data) {
       markersGroup.clearLayers();
       const uniqueStations = [];
@@ -309,67 +324,84 @@
           weight: 2,
           fillOpacity: 0.9
         });
-
         marker.bindPopup(`<b>${i.nombre}</b><br>${i.dpto}, ${i.prov}`);
         markersGroup.addLayer(marker);
       });
     }
 
-    // Renderizar Gráfico de Progresión (Agosto - Julio)
-    function renderChart(data, selectedPluv) {
+    function renderChart(data, pluvA, pluvB) {
       const ctx = document.getElementById('precipChart').getContext('2d');
       const monthsOrder = [8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7];
       const monthNames = ["Ago", "Sep", "Oct", "Nov", "Dic", "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul"];
 
       if (chartInstance) chartInstance.destroy();
 
-      if (selectedPluv === "Todos") {
-        document.getElementById('chartSubText').innerText = "Seleccione un pluviómetro específico arriba para ver el detalle de la campaña.";
+      const compCard = document.getElementById('comparativaCard');
+
+      if (pluvA === "Todos" && pluvB === "Ninguno") {
+        document.getElementById('chartSubText').innerText = "Seleccione un pluviómetro específico arriba para ver el gráfico de progresión.";
+        compCard.classList.add('hidden');
         return;
       }
 
-      document.getElementById('chartSubText').innerText = `Mostrando campaña agroclimática para: ${selectedPluv}`;
+      const datasets = [];
 
-      // Agrupar datos por Campaña
-      const campañas = {};
-      data.forEach(i => {
-        if (!campañas[i.campana]) {
-          campañas[i.campana] = Array(12).fill(0);
-        }
-        const index = monthsOrder.indexOf(i.mes);
-        if (index !== -1) {
-          campañas[i.campana][index] += i.lluvia;
-        }
-      });
+      // Si hay comparación entre dos pluviómetros
+      if (pluvB !== "Ninguno" && pluvA !== "Todos") {
+        compCard.classList.remove('hidden');
 
-      const colors = ['#0284c7', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899'];
-      let colorIndex = 0;
+        const dataA = data.filter(i => i.nombre === pluvA);
+        const dataB = data.filter(i => i.nombre === pluvB);
 
-      const datasets = Object.keys(campañas).map(camp => {
-        const color = colors[colorIndex++ % colors.length];
-        return {
-          label: `Campaña ${camp}`,
-          data: campañas[camp],
-          borderColor: color,
-          backgroundColor: color + '22',
-          borderWidth: 2,
-          tension: 0.3,
-          fill: false
-        };
-      });
+        const sumA = dataA.reduce((acc, curr) => acc + curr.lluvia, 0);
+        const sumB = dataB.reduce((acc, curr) => acc + curr.lluvia, 0);
+        const diff = sumA - sumB;
+
+        document.getElementById('nombrePluvA').innerText = pluvA;
+        document.getElementById('totalPluvA').innerText = `${sumA.toFixed(1)} mm`;
+        document.getElementById('nombrePluvB').innerText = pluvB;
+        document.getElementById('totalPluvB').innerText = `${sumB.toFixed(1)} mm`;
+        document.getElementById('diferenciaMm').innerText = `${Math.abs(diff).toFixed(1)} mm ${diff >= 0 ? '(A mayor)' : '(B mayor)'}`;
+        document.getElementById('diferenciaMm').className = `text-lg font-extrabold ${diff >= 0 ? 'text-emerald-500' : 'text-amber-500'}`;
+
+        const arrA = Array(12).fill(0);
+        const arrB = Array(12).fill(0);
+
+        dataA.forEach(i => { const idx = monthsOrder.indexOf(i.mes); if(idx !== -1) arrA[idx] += i.lluvia; });
+        dataB.forEach(i => { const idx = monthsOrder.indexOf(i.mes); if(idx !== -1) arrB[idx] += i.lluvia; });
+
+        datasets.push({ label: pluvA, data: arrA, borderColor: '#0284c7', backgroundColor: '#0284c722', borderWidth: 3, tension: 0.3 });
+        datasets.push({ label: pluvB, data: arrB, borderColor: '#f59e0b', backgroundColor: '#f59e0b22', borderWidth: 3, tension: 0.3 });
+
+        document.getElementById('chartSubText').innerText = `Comparando: ${pluvA} vs ${pluvB}`;
+
+      } else {
+        compCard.classList.add('hidden');
+        document.getElementById('chartSubText').innerText = `Mostrando campaña agroclimática para: ${pluvA}`;
+
+        const campañas = {};
+        data.forEach(i => {
+          if (!campañas[i.campana]) campañas[i.campana] = Array(12).fill(0);
+          const idx = monthsOrder.indexOf(i.mes);
+          if (idx !== -1) campañas[i.campana][idx] += i.lluvia;
+        });
+
+        const colors = ['#0284c7', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
+        let cIdx = 0;
+
+        Object.keys(campañas).forEach(camp => {
+          const color = colors[cIdx++ % colors.length];
+          datasets.push({ label: `Campaña ${camp}`, data: campañas[camp], borderColor: color, borderWidth: 2, tension: 0.3 });
+        });
+      }
 
       chartInstance = new Chart(ctx, {
         type: 'line',
-        data: {
-          labels: monthNames,
-          datasets: datasets
-        },
+        data: { labels: monthNames, datasets: datasets },
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          plugins: {
-            legend: { position: 'bottom', labels: { boxWidth: 12, color: '#94a3b8' } }
-          },
+          plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, color: '#94a3b8' } } },
           scales: {
             x: { ticks: { color: '#94a3b8' }, grid: { display: false } },
             y: { ticks: { color: '#94a3b8' }, grid: { color: '#3341551A' } }
@@ -378,7 +410,32 @@
       });
     }
 
-    // Lógica del Botón Tema
+    // 5. FUNCIÓN PARA EXPORTAR CSV
+    function downloadCSV() {
+      if (!currentFilteredData.length) return alert("No hay datos para exportar.");
+
+      let csv = "Año-Mes,Pluviometro,Departamento,Provincia,Lluvia_mm\n";
+      currentFilteredData.forEach(i => {
+        csv += `"${i.fecha}","${i.nombre}","${i.dpto}","${i.prov}",${i.lluvia}\n`;
+      });
+
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `reporte_pluviometrico_${new Date().toISOString().slice(0,10)}.csv`;
+      a.click();
+    }
+
+    // 5. FUNCIÓN PARA DESCARGAR EL GRÁFICO EN PNG
+    function downloadChartPNG() {
+      if (!chartInstance) return alert("No hay gráfico activo para descargar.");
+      const a = document.createElement("a");
+      a.href = chartInstance.toBase64Image();
+      a.download = `grafico_progresion_${new Date().toISOString().slice(0,10)}.png`;
+      a.click();
+    }
+
     window.onload = () => {
       feather.replace();
       initMap();
@@ -388,16 +445,12 @@
       const darkIcon = document.getElementById('theme-toggle-dark-icon');
       const lightIcon = document.getElementById('theme-toggle-light-icon');
 
-      if (document.documentElement.classList.contains('dark')) {
-        lightIcon.classList.remove('hidden');
-      } else {
-        darkIcon.classList.remove('hidden');
-      }
+      if (document.documentElement.classList.contains('dark')) lightIcon.classList.remove('hidden');
+      else darkIcon.classList.remove('hidden');
 
       themeToggleBtn.addEventListener('click', () => {
         darkIcon.classList.toggle('hidden');
         lightIcon.classList.toggle('hidden');
-
         if (document.documentElement.classList.contains('dark')) {
           document.documentElement.classList.remove('dark');
           localStorage.setItem('theme', 'light');
