@@ -19,6 +19,11 @@
 
   <style>
     body { font-family: 'Inter', sans-serif; }
+    /* Personalización para el scrollbar del modal */
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+    .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; }
   </style>
 
   <script>
@@ -32,7 +37,7 @@
 <body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 antialiased min-h-screen flex flex-col justify-between transition-colors duration-300">
 
   <!-- HEADER INSTITUCIONAL -->
-  <header class="bg-gradient-to-r from-[#0B7BAF] via-[#08618B] to-[#054869] text-white shadow-lg sticky top-0 z-50">
+  <header class="bg-gradient-to-r from-[#0B7BAF] via-[#08618B] to-[#054869] text-white shadow-lg sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
       <div class="flex items-center space-x-4">
         <img src="./logo_inta.png" alt="Logo INTA" class="h-14 bg-white p-1 rounded-lg shadow-md transition-transform hover:scale-105">
@@ -43,7 +48,14 @@
       </div>
 
       <div class="flex items-center gap-3">
-        <button id="theme-toggle" type="button" class="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-blue-100 border border-white/20 transition-all">
+        <!-- BOTÓN QUIÉNES SOMOS -->
+        <button onclick="toggleModal(true)" type="button" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-blue-100 border border-white/20 transition-all text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-white/50">
+          <i data-feather="info" class="h-4 w-4"></i>
+          <span>¿Quiénes somos?</span>
+        </button>
+
+        <!-- BOTÓN MODO OSCURO -->
+        <button id="theme-toggle" type="button" class="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-blue-100 border border-white/20 transition-all focus:outline-none focus:ring-2 focus:ring-white/50">
           <i id="theme-toggle-dark-icon" data-feather="moon" class="hidden h-5 w-5"></i>
           <i id="theme-toggle-light-icon" data-feather="sun" class="hidden h-5 w-5 text-amber-300"></i>
         </button>
@@ -58,7 +70,6 @@
     <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-4 md:p-6 border border-slate-200 dark:border-slate-700/60 transition-colors">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3">
         
-        <!-- Provincia -->
         <div>
           <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Provincia</label>
           <select id="provinciaSelect" onchange="onProvinciaChange()" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-2.5 text-sm">
@@ -66,7 +77,6 @@
           </select>
         </div>
 
-        <!-- Departamento -->
         <div>
           <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Departamento</label>
           <select id="deptoSelect" onchange="onDeptoChange()" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-2.5 text-sm">
@@ -74,7 +84,6 @@
           </select>
         </div>
 
-        <!-- Tipo Ciclo -->
         <div>
           <label class="block text-xs font-bold uppercase text-sky-600 dark:text-sky-400 mb-1">Ciclo</label>
           <select id="tipoCicloSelect" onchange="onTipoCicloChange()" class="w-full bg-slate-50 dark:bg-slate-900 border border-sky-300 dark:border-sky-700 rounded-xl p-2.5 text-sm font-semibold">
@@ -83,14 +92,12 @@
           </select>
         </div>
 
-        <!-- Selector Período Exacto -->
         <div>
           <label class="block text-xs font-bold uppercase text-sky-600 dark:text-sky-400 mb-1">Período / Año</label>
           <select id="periodoSelect" onchange="applyFilters()" class="w-full bg-slate-50 dark:bg-slate-900 border border-sky-300 dark:border-sky-700 rounded-xl p-2.5 text-sm font-semibold">
           </select>
         </div>
 
-        <!-- Pluviómetro A -->
         <div>
           <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Pluviómetro A</label>
           <select id="pluviometroSelect" onchange="applyFilters()" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-2.5 text-sm">
@@ -98,7 +105,6 @@
           </select>
         </div>
 
-        <!-- Pluviómetro B -->
         <div>
           <label class="block text-xs font-bold uppercase text-amber-600 dark:text-amber-400 mb-1">Pluviómetro B (Comparar)</label>
           <select id="pluviometroSelectB" onchange="applyFilters()" class="w-full bg-slate-50 dark:bg-slate-900 border border-amber-300 dark:border-amber-700 rounded-xl p-2.5 text-sm">
@@ -109,7 +115,7 @@
       </div>
     </div>
 
-    <!-- TARJETA COMPARATIVA DE ACUMULADOS EN EL PERÍODO -->
+    <!-- TARJETA COMPARATIVA -->
     <div id="comparativaCard" class="bg-sky-50 dark:bg-sky-950/30 border border-sky-200 dark:border-sky-800/50 rounded-2xl p-4 transition-colors">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
         <div>
@@ -132,7 +138,7 @@
     <!-- SECCIÓN GRÁFICO Y MAPA -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-      <!-- GRÁFICO CON DESCARGA -->
+      <!-- GRÁFICO -->
       <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700/60 p-5 flex flex-col justify-between transition-colors">
         <div>
           <div class="flex justify-between items-center mb-2">
@@ -191,6 +197,96 @@
 
   </main>
 
+  <!-- MODAL POPUP: QUIÉNES SOMOS / CRÉDITOS -->
+  <div id="aboutModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 transition-opacity duration-300">
+    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
+      
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center bg-slate-50 dark:bg-slate-900/50">
+        <h2 class="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+          <i data-feather="info" class="h-5 w-5 text-sky-600 dark:text-sky-400"></i>
+          Información Institucional y Créditos
+        </h2>
+        <button onclick="toggleModal(false)" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg transition-colors">
+          <i data-feather="x" class="h-6 w-6"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-600 dark:text-slate-300 custom-scrollbar">
+        
+        <!-- Breve Descripción -->
+        <div class="space-y-3 leading-relaxed">
+          <p>La <strong>Red Pluviométrica</strong> es una herramienta tecnológica desarrollada por el <strong>INTA Centro Regional Salta y Jujuy</strong>, cuyo objetivo es recopilar datos precisos y confiables sobre la precipitación en diversas áreas geográficas.</p>
+          <p>Estos datos son fundamentales para la gestión agrícola, la planificación territorial, la gestión de recursos hídricos y la prevención de eventos hidrometeorológicos extremos.</p>
+          <p>La Red Pluviométrica es una iniciativa que reúne el trabajo articulado y mancomunado entre INTA, productores locales y colaboradores particulares que aportan diariamente la información registrada por sus pluviómetros.</p>
+          <p>La ubicación de los pluviómetros se encuentra georreferenciada y los datos son recopilados mediante la plataforma <strong>INTA Territorios</strong>, desarrollada sobre herramientas de código abierto como <strong>Kobo Toolbox</strong> y <strong>Kobo Collect</strong>, optimizando la carga, exportación y análisis de la información.</p>
+          
+          <div class="bg-sky-50 dark:bg-sky-950/40 border-l-4 border-sky-500 p-3 rounded-r-lg text-xs space-y-1">
+            <p><strong>Día Pluviométrico:</strong> Período de 24 horas comprendido entre las 9:00 h de un día y las 9:00 h del día siguiente. La precipitación registrada a las 9:00 h corresponde a la lluvia acumulada desde las 9:00 h del día anterior.</p>
+            <p>El sistema pone a disposición de la comunidad paneles de control interactivos, que permiten la consulta de precipitaciones diarias y mensuales desde octubre de 2024 a la fecha.</p>
+          </div>
+        </div>
+
+        <hr class="border-slate-200 dark:border-slate-700">
+
+        <!-- Equipo de Trabajo -->
+        <div>
+          <h3 class="font-bold text-slate-800 dark:text-slate-100 text-base mb-3 flex items-center gap-2">
+            👥 Equipo de Trabajo
+          </h3>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <li class="bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg border border-slate-100 dark:border-slate-800">Lic. Inf. Hernán Elena (EEA Salta)</li>
+            <li class="bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg border border-slate-100 dark:border-slate-800">Obs. Met. Germán Guanca (EEA Salta)</li>
+            <li class="bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg border border-slate-100 dark:border-slate-800">Ing. Agr. Rafael Saldaño (OIT Coronel Moldes)</li>
+            <li class="bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg border border-slate-100 dark:border-slate-800">Ing. Agr. Daniela Moneta (AER Valle de Lerma)</li>
+            <li class="bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg border border-slate-100 dark:border-slate-800">Ing. Juan Ramón Rojas (AER Santa Victoria Este)</li>
+            <li class="bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg border border-slate-100 dark:border-slate-800">Ing. Agr. Daniel Lamberti (AER Perico)</li>
+            <li class="bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg border border-slate-100 dark:border-slate-800">Tec. RRHH Fátima del Valle Miranda (AER Palma Sola)</li>
+            <li class="bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg border border-slate-100 dark:border-slate-800">Ing. Agr. Florencia Diaz (AER Palma Sola)</li>
+            <li class="bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg border border-slate-100 dark:border-slate-800">Ing. Agr. Héctor Diaz (AER J.V. Gonzalez)</li>
+            <li class="bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg border border-slate-100 dark:border-slate-800">Ing. Agr. Carlos G. Cabrera (AER J.V. Gonzalez)</li>
+            <li class="bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg border border-slate-100 dark:border-slate-800">Lucas Diaz (AER Cafayate - OIT San Carlos)</li>
+            <li class="bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg border border-slate-100 dark:border-slate-800">Med. Vet. Cristina Rosetto (EECT Yuto)</li>
+            <li class="bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg border border-slate-100 dark:border-slate-800">Ing. RRNN Fabian Tejerina (EEA Salta)</li>
+            <li class="bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg border border-slate-100 dark:border-slate-800">Tec. Agr. Carlos Arias (OIT General Güemes)</li>
+            <li class="bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg border border-slate-100 dark:border-slate-800">Ing. Agr. Diego Kalman (AER Cafayate)</li>
+          </ul>
+        </div>
+
+        <hr class="border-slate-200 dark:border-slate-700">
+
+        <!-- Red de Colaboradores -->
+        <div>
+          <h3 class="font-bold text-slate-800 dark:text-slate-100 text-base mb-2 flex items-center gap-2">
+            🤝 Red de Colaboradores Territoriales
+          </h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
+            Nicolás Uriburu, Nicolás Villegas, Matías Lanusse, Marcela López, Martín Amado, Agustín Sanz Navamuel, Luis Fernández Acevedo, Miguel A. Boasso, Luis Zavaleta, Mario Lambrisca, Noelia Rovedatti, Matías Canonica, Alejo Álvarez, Javier Montes, Guillermo Patrón Costa, Sebastián Mendilaharzu, Francisco Chehda, Jorge Robles, Gustavo Soricich, Javier Atea, Luis D. Elías, Leandro Carrizo, Daiana Núñez, Fátima González, Santiago Villalba, Juan Collado, Julio Collado, Estanislao Lara, Carlos Cruz, Daniel Espinoza, Fabián Álvarez, Lucio Señoranis, René Vallejos Rueda, Héctor Miranda, Emanuel Arias, Oscar Herrera, Francisca Vacaflor, Zaturnino Ceballos, Alcides Ceballos, Juan Ignacio Pearson, Pascual Erazo, Darío Romero, Luisa Andrada, Alejandro Ricalde, Odorico Romero, Lucas Campos, Sebastián Díaz, Carlos Sanz, Gabriel Brinder, Gastón Vizgarra, Diego Sulca, Alicia Tapia, Sergio Cassinelli, María Zamboni, Andrés Flores, Tomás Lienemann, Carmen Carattoni, Cecilia Carattoni, Tito Donoso, Javier Aprile, Carla Carattoni, Cuenca Renán, Luna Federico, Soloza Pedro, Aparicio Cirila, Torres Arnaldo, Torres Mergido, Sardina Rubén, Illesca Francisco, Saravia Adrián, Carabajal Jesús, Alvarado René, Saban Mary, Rodríguez Eleuterio, Guzmán Durbal, Sajama Sergio, Miranda Dina, Pedro Quispe, Fabiana Monasterio, Raquel Araoz, Raúl Álvarez, Rafael Mendoza, Lila Torfe, Samuel Aramayo, Jose Maidana, Hernan Terceros, Maria Sulca, Paulino Sulca, Nadia Ríos, Matías Copa, Marcos Aurelio Rodríguez, Horacio Hoyo, Alejandro Romero, Carlos Ruiz.
+          </p>
+        </div>
+
+        <hr class="border-slate-200 dark:border-slate-700">
+
+        <!-- Contacto -->
+        <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-200">
+          <i data-feather="mail" class="h-4 w-4 text-sky-500"></i>
+          <span>Contacto:</span>
+          <a href="mailto:elena.hernan@inta.gob.ar" class="text-sky-600 dark:text-sky-400 hover:underline">elena.hernan@inta.gob.ar</a>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 flex justify-end">
+        <button onclick="toggleModal(false)" type="button" class="px-4 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-100 text-xs font-bold transition-all">
+          Cerrar
+        </button>
+      </div>
+
+    </div>
+  </div>
+
   <!-- FOOTER INSTITUCIONAL -->
   <footer class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700/60 py-8 mt-6 transition-colors">
     <div class="max-w-7xl mx-auto px-4 text-center">
@@ -207,6 +303,16 @@
     let currentFilteredData = [];
     let map, markersGroup;
     let chartInstance = null;
+
+    // Control del Modal Popup
+    function toggleModal(show) {
+      const modal = document.getElementById('aboutModal');
+      if (show) {
+        modal.classList.remove('hidden');
+      } else {
+        modal.classList.add('hidden');
+      }
+    }
 
     function initMap() {
       map = L.map('map').setView([-24.5, -64.8], 7);
@@ -369,7 +475,6 @@
       document.getElementById('chartTitle').innerHTML = `<i data-feather="bar-chart-2" class="h-5 w-5 text-sky-500"></i> Progresión (${isAgro ? 'Ago - Jul' : 'Ene - Dic'})`;
       feather.replace();
 
-      // Calcular acumulados de la tarjeta
       const dataA = data.filter(i => pluvA !== "Todos" ? i.nombre === pluvA : true);
       const dataB = pluvB !== "Ninguno" ? data.filter(i => i.nombre === pluvB) : [];
 
@@ -390,7 +495,6 @@
         : "N/A";
       document.getElementById('diferenciaMm').className = `text-xl font-black ${diff >= 0 ? 'text-emerald-500' : 'text-amber-500'}`;
 
-      // Armar dataset del gráfico
       const datasets = [];
 
       if (pluvB !== "Ninguno" && pluvA !== "Todos") {
@@ -408,7 +512,6 @@
       } else {
         document.getElementById('chartSubText').innerText = `Mostrando ${pluvA} (${periodo})`;
 
-        // Agrupar por el grupo correspondiente (Campañas o Años)
         const grupos = {};
         dataA.forEach(i => {
           const key = isAgro ? i.campana : i.anio.toString();
