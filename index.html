@@ -490,32 +490,46 @@
         </tr>
       `).join('');
     }
-
+    // REEMPLAZÁ POR ESTA NUEVA VERSIÓN:
     function renderMap(data) {
+      if (!markersGroup || !fullMarkersGroup) return;
+    
       markersGroup.clearLayers();
       fullMarkersGroup.clearLayers();
-      const mapKeys = new Set();
     
+      const uniquePoints = new Map();
+    
+      // Deduplica registros por nombre para dibujar solo 1 punto por estación
       data.forEach(i => {
-        if (i.lat && i.lng && !mapKeys.has(i.nombre)) {
-          mapKeys.add(i.nombre);
-          
-          const popupText = `<b>${i.nombre}</b><br>${i.dpto}, ${i.prov}`;
-    
-          // Marcador Mapa Chico
-          const marker = L.circleMarker([i.lat, i.lng], {
-            radius: 7, fillColor: "#0284c7", color: "#ffffff", weight: 2, fillOpacity: 0.9
-          }).bindPopup(popupText);
-          markersGroup.addLayer(marker);
-    
-          // Marcador Mapa Full
-          const fullMarker = L.circleMarker([i.lat, i.lng], {
-            radius: 8, fillColor: "#0284c7", color: "#ffffff", weight: 2, fillOpacity: 0.9
-          }).bindPopup(popupText);
-          fullMarkersGroup.addLayer(fullMarker);
+        if (i.lat && i.lng && !uniquePoints.has(i.nombre)) {
+          uniquePoints.set(i.nombre, i);
         }
       });
+    
+      const bounds = [];
+    
+      uniquePoints.forEach(i => {
+        const popupText = `<b>${i.nombre}</b><br>${i.dpto}, ${i.prov}`;
+        const latLng = [parseFloat(i.lat), parseFloat(i.lng)];
+    
+        const markerSmall = L.circleMarker(latLng, {
+          radius: 6, fillColor: "#0284c7", color: "#ffffff", weight: 2, fillOpacity: 0.9
+        }).bindPopup(popupText);
+        markersGroup.addLayer(markerSmall);
+    
+        const markerFull = L.circleMarker(latLng, {
+          radius: 7, fillColor: "#0284c7", color: "#ffffff", weight: 2, fillOpacity: 0.9
+        }).bindPopup(popupText);
+        fullMarkersGroup.addLayer(markerFull);
+    
+        bounds.push(latLng);
+      });
+    
+      if (bounds.length > 0) {
+        map.fitBounds(bounds, { padding: [20, 20], maxZoom: 10 });
+      }
     }
+    
 
     function renderChartAndCards(data, pluvA, pluvB, tipoCiclo, periodo) {
       const ctx = document.getElementById('precipChart').getContext('2d');
@@ -639,54 +653,52 @@
       a.click();
     }
 
+    // NUEVAS VERSIONES:
     function toggleMapModal(show) {
       const modal = document.getElementById('mapModal');
       if (show) {
         modal.classList.remove('hidden');
-        // Forzamos al mapa a recalculase para evitar que cargue gris o desalineado
-        setTimeout(() => {
-          fullMap.invalidateSize();
-          if (fullMarkersGroup.getLayers().length > 0) {
-            fullMap.fitBounds(fullMarkersGroup.getBounds().pad(0.1));
-          }
-        }, 200);
+        // Renderizado diferido ultra-rápido
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            if (fullMap) {
+              fullMap.invalidateSize();
+              const layers = fullMarkersGroup.getLayers();
+              if (layers.length > 0) {
+                const group = L.featureGroup(layers);
+                fullMap.fitBounds(group.getBounds().pad(0.1));
+              }
+            }
+          }, 150);
+        });
       } else {
         modal.classList.add('hidden');
       }
     }
+    
     function resetFiltersAndShowAll() {
-      // 1. Restablecer Selectores de Ubicación
       document.getElementById('provinciaSelect').value = "Todas";
+      onProvinciaChange();
       
-      // Refresca departamentos dejando seleccionado "Todos"
-      const deptos = ["Todos", ...new Set(globalPluviometros.map(i => i.dpto))].sort();
-      document.getElementById('deptoSelect').innerHTML = deptos.map(d => `<option value="${d}">${d}</option>`).join('');
       document.getElementById('deptoSelect').value = "Todos";
+      onDeptoChange();
     
-      // Refresca pluviómetros dejando seleccionado "Todos" en A y "Ninguno" en B
-      const pluviometros = ["Todos", ...new Set(globalPluviometros.map(i => i.nombre))].sort();
-      document.getElementById('pluviometroSelect').innerHTML = pluviometros.map(p => `<option value="${p}">${p}</option>`).join('');
       document.getElementById('pluviometroSelect').value = "Todos";
-    
-      const pluvBOptions = ["Ninguno", ...pluviometros.filter(p => p !== "Todos")];
-      document.getElementById('pluviometroSelectB').innerHTML = pluvBOptions.map(p => `<option value="${p}">${p}</option>`).join('');
       document.getElementById('pluviometroSelectB').value = "Ninguno";
     
-      // 2. Restablecer Periodos (Muestra la opción general)
       const tipo = document.getElementById('tipoCicloSelect').value;
-      if (tipo === "agricola") {
-        document.getElementById('periodoSelect').value = "Todas las Campañas";
-      } else {
-        document.getElementById('periodoSelect').value = "Todos los Años";
-      }
+      document.getElementById('periodoSelect').value = (tipo === "agricola") ? "Todas las Campañas" : "Todos los Años";
     
-      // 3. Replicar los filtros aplicados y reajustar el mapa
       applyFilters();
     
       setTimeout(() => {
-        fullMap.invalidateSize();
-        if (fullMarkersGroup.getLayers().length > 0) {
-          fullMap.fitBounds(fullMarkersGroup.getBounds().pad(0.1));
+        if (fullMap) {
+          fullMap.invalidateSize();
+          const layers = fullMarkersGroup.getLayers();
+          if (layers.length > 0) {
+            const group = L.featureGroup(layers);
+            fullMap.fitBounds(group.getBounds().pad(0.1));
+          }
         }
       }, 100);
     }
