@@ -11294,7 +11294,7 @@
     "Provincia": "Jujuy",
     "lat": -24.386494,
     "lng": -65.147832,
-    "mm": 3
+    "mm": 4
   },
   {
     "Año": 2026,
@@ -11349,7 +11349,7 @@
     "Provincia": "Salta",
     "lat": -24.69020109,
     "lng": -65.10091636,
-    "mm": 5
+    "mm": 7
   },
   {
     "Año": 2026,
@@ -11360,7 +11360,7 @@
     "Provincia": "Salta",
     "lat": -24.6706301,
     "lng": -65.0499433,
-    "mm": 4
+    "mm": 5
   },
   {
     "Año": 2026,
@@ -11382,7 +11382,18 @@
     "Provincia": "Jujuy",
     "lat": -24.393152,
     "lng": -65.240711,
-    "mm": 3
+    "mm": 4
+  },
+  {
+    "Año": 2026,
+    "Mes": 9,
+    "cod": "elceibal",
+    "Pluviómetro": "Esc. El Ceibal",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.5609968,
+    "lng": -65.1850502,
+    "mm": 4
   },
   {
     "Año": 2026,
@@ -11503,7 +11514,7 @@
     "Provincia": "Jujuy",
     "lat": -24.436837,
     "lng": -65.169592,
-    "mm": 4
+    "mm": 5
   },
   {
     "Año": 2026,
@@ -11547,7 +11558,7 @@
     "Provincia": "Jujuy",
     "lat": -24.459293,
     "lng": -65.119872,
-    "mm": 4
+    "mm": 5
   },
   {
     "Año": 2026,
