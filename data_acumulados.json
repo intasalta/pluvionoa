@@ -8736,6 +8736,17 @@
   {
     "Año": 2026,
     "Mes": 4,
+    "cod": "batule",
+    "Pluviómetro": "Finca Batule. Coropampa",
+    "Departamento": "Guachipas",
+    "Provincia": "Salta",
+    "lat": -25.506143,
+    "lng": -65.50611,
+    "mm": 19
+  },
+  {
+    "Año": 2026,
+    "Mes": 4,
     "cod": "brigada",
     "Pluviómetro": "Brigada LIF",
     "Departamento": "Santa Bárbara",
@@ -9429,6 +9440,17 @@
   {
     "Año": 2026,
     "Mes": 5,
+    "cod": "batule",
+    "Pluviómetro": "Finca Batule. Coropampa",
+    "Departamento": "Guachipas",
+    "Provincia": "Salta",
+    "lat": -25.506143,
+    "lng": -65.50611,
+    "mm": 8
+  },
+  {
+    "Año": 2026,
+    "Mes": 5,
     "cod": "brigada",
     "Pluviómetro": "Brigada LIF",
     "Departamento": "Santa Bárbara",
@@ -9755,6 +9777,17 @@
     "lat": -24.923925,
     "lng": -65.488686,
     "mm": 7
+  },
+  {
+    "Año": 2026,
+    "Mes": 6,
+    "cod": "batule",
+    "Pluviómetro": "Finca Batule. Coropampa",
+    "Departamento": "Guachipas",
+    "Provincia": "Salta",
+    "lat": -25.506143,
+    "lng": -65.50611,
+    "mm": 3
   },
   {
     "Año": 2026,
