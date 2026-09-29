@@ -11327,7 +11327,7 @@
     "Provincia": "Jujuy",
     "lat": -24.386494,
     "lng": -65.147832,
-    "mm": 4
+    "mm": 6
   },
   {
     "Año": 2026,
@@ -11343,13 +11343,24 @@
   {
     "Año": 2026,
     "Mes": 9,
+    "cod": "ampasca",
+    "Pluviómetro": "Ampascachi",
+    "Departamento": "La Viña",
+    "Provincia": "Salta",
+    "lat": -25.353346,
+    "lng": -65.526761,
+    "mm": 11
+  },
+  {
+    "Año": 2026,
+    "Mes": 9,
     "cod": "angostu",
     "Pluviómetro": "El Angosto",
     "Departamento": "La Caldera",
     "Provincia": "Salta",
     "lat": -24.584594,
     "lng": -65.361772,
-    "mm": 10
+    "mm": 16
   },
   {
     "Año": 2026,
@@ -11360,7 +11371,7 @@
     "Provincia": "Salta",
     "lat": -24.923925,
     "lng": -65.488686,
-    "mm": 4
+    "mm": 36
   },
   {
     "Año": 2026,
@@ -11371,7 +11382,18 @@
     "Provincia": "Salta",
     "lat": -25.02334,
     "lng": -65.504529,
-    "mm": 3
+    "mm": 8
+  },
+  {
+    "Año": 2026,
+    "Mes": 9,
+    "cod": "brigada",
+    "Pluviómetro": "Brigada LIF",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -23.916053,
+    "lng": -64.301872,
+    "mm": 16
   },
   {
     "Año": 2026,
@@ -11382,7 +11404,7 @@
     "Provincia": "Salta",
     "lat": -24.69020109,
     "lng": -65.10091636,
-    "mm": 7
+    "mm": 27
   },
   {
     "Año": 2026,
@@ -11393,7 +11415,18 @@
     "Provincia": "Salta",
     "lat": -24.6706301,
     "lng": -65.0499433,
-    "mm": 5
+    "mm": 23
+  },
+  {
+    "Año": 2026,
+    "Mes": 9,
+    "cod": "desmonte",
+    "Pluviómetro": "El Desmonte",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.7030347,
+    "lng": -65.1784421,
+    "mm": 26
   },
   {
     "Año": 2026,
@@ -11415,7 +11448,7 @@
     "Provincia": "Jujuy",
     "lat": -24.393152,
     "lng": -65.240711,
-    "mm": 4
+    "mm": 6
   },
   {
     "Año": 2026,
@@ -11426,7 +11459,7 @@
     "Provincia": "Salta",
     "lat": -24.5609968,
     "lng": -65.1850502,
-    "mm": 4
+    "mm": 29
   },
   {
     "Año": 2026,
@@ -11437,7 +11470,18 @@
     "Provincia": "Salta",
     "lat": -24.861831,
     "lng": -65.529211,
-    "mm": 2
+    "mm": 22
+  },
+  {
+    "Año": 2026,
+    "Mes": 9,
+    "cod": "granjar",
+    "Pluviómetro": "Granja Rosada",
+    "Departamento": "Chicoana",
+    "Provincia": "Salta",
+    "lat": -25.065457,
+    "lng": -65.486123,
+    "mm": 4
   },
   {
     "Año": 2026,
@@ -11448,7 +11492,7 @@
     "Provincia": "Salta",
     "lat": -24.6134127,
     "lng": -65.3891557,
-    "mm": 7
+    "mm": 30
   },
   {
     "Año": 2026,
@@ -11459,7 +11503,7 @@
     "Provincia": "Salta",
     "lat": -24.971025,
     "lng": -65.568833,
-    "mm": 4
+    "mm": 16
   },
   {
     "Año": 2026,
@@ -11492,7 +11536,18 @@
     "Provincia": "Salta",
     "lat": -25.072152,
     "lng": -65.572838,
-    "mm": 9
+    "mm": 28
+  },
+  {
+    "Año": 2026,
+    "Mes": 9,
+    "cod": "lasmerce",
+    "Pluviómetro": "Las Mercedes",
+    "Departamento": "Cerrillos",
+    "Provincia": "Salta",
+    "lat": -24.959684,
+    "lng": -65.533405,
+    "mm": 21
   },
   {
     "Año": 2026,
@@ -11503,7 +11558,7 @@
     "Provincia": "Salta",
     "lat": -25.10296559469432,
     "lng": -65.54758439680077,
-    "mm": 8
+    "mm": 44
   },
   {
     "Año": 2026,
@@ -11514,7 +11569,7 @@
     "Provincia": "Salta",
     "lat": -24.894545291642068,
     "lng": -65.51515067505545,
-    "mm": 5
+    "mm": 20
   },
   {
     "Año": 2026,
@@ -11525,7 +11580,7 @@
     "Provincia": "Salta",
     "lat": -25.001613,
     "lng": -65.4353,
-    "mm": 5
+    "mm": 33
   },
   {
     "Año": 2026,
@@ -11536,7 +11591,7 @@
     "Provincia": "Jujuy",
     "lat": -24.428642,
     "lng": -65.084427,
-    "mm": 3
+    "mm": 5
   },
   {
     "Año": 2026,
@@ -11563,6 +11618,17 @@
   {
     "Año": 2026,
     "Mes": 9,
+    "cod": "ojoagua",
+    "Pluviómetro": "Ojo de Agua",
+    "Departamento": "Metán",
+    "Provincia": "Salta",
+    "lat": -25.403289910517973,
+    "lng": -64.640016156496,
+    "mm": 50
+  },
+  {
+    "Año": 2026,
+    "Mes": 9,
     "cod": "ojode",
     "Pluviómetro": "Ojo de Agua - Güemes",
     "Departamento": "General Güemes",
@@ -11580,7 +11646,7 @@
     "Provincia": "Salta",
     "lat": -24.609886,
     "lng": -65.376658,
-    "mm": 12
+    "mm": 38
   },
   {
     "Año": 2026,
@@ -11591,7 +11657,7 @@
     "Provincia": "Jujuy",
     "lat": -24.459293,
     "lng": -65.119872,
-    "mm": 5
+    "mm": 6
   },
   {
     "Año": 2026,
@@ -11602,7 +11668,7 @@
     "Provincia": "Salta",
     "lat": -24.927083,
     "lng": -65.606375,
-    "mm": 8
+    "mm": 21
   },
   {
     "Año": 2026,
@@ -11613,7 +11679,18 @@
     "Provincia": "Salta",
     "lat": -25.47259,
     "lng": -65.567392,
-    "mm": 4
+    "mm": 5
+  },
+  {
+    "Año": 2026,
+    "Mes": 9,
+    "cod": "santalu",
+    "Pluviómetro": "Santa Lucia - Las Vertientes",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -24.013553,
+    "lng": -64.209472,
+    "mm": 38
   },
   {
     "Año": 2026,
@@ -11624,7 +11701,7 @@
     "Provincia": "Salta",
     "lat": -25.074174,
     "lng": -65.508401,
-    "mm": 5
+    "mm": 12
   },
   {
     "Año": 2026,
@@ -11635,7 +11712,7 @@
     "Provincia": "Salta",
     "lat": -24.89363,
     "lng": -65.533865,
-    "mm": 7
+    "mm": 31
   },
   {
     "Año": 2026,
@@ -11646,7 +11723,7 @@
     "Provincia": "Salta",
     "lat": -24.8063648696462,
     "lng": -65.47834350405797,
-    "mm": 4
+    "mm": 36
   },
   {
     "Año": 2026,
@@ -11657,6 +11734,6 @@
     "Provincia": "Salta",
     "lat": -24.654866,
     "lng": -65.400645,
-    "mm": 16
+    "mm": 19
   }
 ]
