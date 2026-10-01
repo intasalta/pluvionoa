@@ -11382,7 +11382,7 @@
     "Provincia": "Jujuy",
     "lat": -24.386494,
     "lng": -65.147832,
-    "mm": 6
+    "mm": 14
   },
   {
     "Año": 2026,
@@ -11448,7 +11448,7 @@
     "Provincia": "Salta",
     "lat": -24.584594,
     "lng": -65.361772,
-    "mm": 16
+    "mm": 25
   },
   {
     "Año": 2026,
@@ -11481,7 +11481,7 @@
     "Provincia": "Salta",
     "lat": -24.69181749,
     "lng": -65.13732909,
-    "mm": 24
+    "mm": 26
   },
   {
     "Año": 2026,
@@ -11492,7 +11492,7 @@
     "Provincia": "Jujuy",
     "lat": -23.916053,
     "lng": -64.301872,
-    "mm": 16
+    "mm": 19
   },
   {
     "Año": 2026,
@@ -11525,7 +11525,7 @@
     "Provincia": "Salta",
     "lat": -24.69020109,
     "lng": -65.10091636,
-    "mm": 27
+    "mm": 31
   },
   {
     "Año": 2026,
@@ -11548,6 +11548,17 @@
     "lat": -22.134202,
     "lng": -62.883381,
     "mm": 20
+  },
+  {
+    "Año": 2026,
+    "Mes": 9,
+    "cod": "comvert",
+    "Pluviómetro": "Com. Las Verientes",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.479806,
+    "lng": -62.391685,
+    "mm": 18
   },
   {
     "Año": 2026,
@@ -11580,7 +11591,7 @@
     "Provincia": "Salta",
     "lat": -24.6457929,
     "lng": -64.9124554,
-    "mm": 22
+    "mm": 23
   },
   {
     "Año": 2026,
@@ -11591,7 +11602,7 @@
     "Provincia": "Jujuy",
     "lat": -24.275888,
     "lng": -64.407917,
-    "mm": 34
+    "mm": 39
   },
   {
     "Año": 2026,
@@ -11624,7 +11635,7 @@
     "Provincia": "Salta",
     "lat": -24.5609968,
     "lng": -65.1850502,
-    "mm": 29
+    "mm": 30
   },
   {
     "Año": 2026,
@@ -11690,7 +11701,7 @@
     "Provincia": "Salta",
     "lat": -24.6134127,
     "lng": -65.3891557,
-    "mm": 30
+    "mm": 38
   },
   {
     "Año": 2026,
@@ -11723,7 +11734,18 @@
     "Provincia": "Salta",
     "lat": -24.701576,
     "lng": -65.40402,
-    "mm": 7
+    "mm": 11
+  },
+  {
+    "Año": 2026,
+    "Mes": 9,
+    "cod": "larguero",
+    "Pluviómetro": "Comunidad Larguero",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.473374,
+    "lng": -62.443372,
+    "mm": 14
   },
   {
     "Año": 2026,
@@ -11757,6 +11779,28 @@
     "lat": -24.959684,
     "lng": -65.533405,
     "mm": 21
+  },
+  {
+    "Año": 2026,
+    "Mes": 9,
+    "cod": "lasvizca",
+    "Pluviómetro": "Las Vachichas",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -23.862569,
+    "lng": -64.173231,
+    "mm": 3
+  },
+  {
+    "Año": 2026,
+    "Mes": 9,
+    "cod": "latroja",
+    "Pluviómetro": "Escuela Rural \"La Troja\"",
+    "Departamento": "Capital",
+    "Provincia": "Salta",
+    "lat": -25.0527519,
+    "lng": -65.1949623,
+    "mm": 5
   },
   {
     "Año": 2026,
@@ -11800,7 +11844,18 @@
     "Provincia": "Jujuy",
     "lat": -23.990341,
     "lng": -64.307125,
-    "mm": 25
+    "mm": 37
+  },
+  {
+    "Año": 2026,
+    "Mes": 9,
+    "cod": "misionpaz",
+    "Pluviómetro": "Mision La Paz",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.382812,
+    "lng": -62.516435,
+    "mm": 14
   },
   {
     "Año": 2026,
@@ -11877,7 +11932,7 @@
     "Provincia": "Salta",
     "lat": -24.609886,
     "lng": -65.376658,
-    "mm": 38
+    "mm": 46
   },
   {
     "Año": 2026,
@@ -11888,7 +11943,7 @@
     "Provincia": "Jujuy",
     "lat": -24.459293,
     "lng": -65.119872,
-    "mm": 28
+    "mm": 29
   },
   {
     "Año": 2026,
@@ -11954,7 +12009,7 @@
     "Provincia": "Jujuy",
     "lat": -24.27,
     "lng": -64.401036,
-    "mm": 35
+    "mm": 42
   },
   {
     "Año": 2026,
@@ -11965,7 +12020,7 @@
     "Provincia": "Jujuy",
     "lat": -24.013553,
     "lng": -64.209472,
-    "mm": 38
+    "mm": 48
   },
   {
     "Año": 2026,
@@ -12020,7 +12075,7 @@
     "Provincia": "Jujuy",
     "lat": -23.896693,
     "lng": -64.480157,
-    "mm": 3
+    "mm": 10
   },
   {
     "Año": 2026,
@@ -12053,7 +12108,7 @@
     "Provincia": "Jujuy",
     "lat": -24.10634677607405,
     "lng": -64.40205875397369,
-    "mm": 20
+    "mm": 50
   },
   {
     "Año": 2026,
@@ -12075,6 +12130,6 @@
     "Provincia": "Salta",
     "lat": -24.654866,
     "lng": -65.400645,
-    "mm": 19
+    "mm": 29
   }
 ]
