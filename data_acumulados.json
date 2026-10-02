@@ -11684,6 +11684,17 @@
   {
     "Año": 2026,
     "Mes": 9,
+    "cod": "fliarojas",
+    "Pluviómetro": "Rojas",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.111841,
+    "lng": -63.06872,
+    "mm": 41
+  },
+  {
+    "Año": 2026,
+    "Mes": 9,
     "cod": "granjar",
     "Pluviómetro": "Granja Rosada",
     "Departamento": "Chicoana",
@@ -11756,7 +11767,7 @@
     "Provincia": "Salta",
     "lat": -25.012723,
     "lng": -65.649572,
-    "mm": 23
+    "mm": 28
   },
   {
     "Año": 2026,
@@ -11844,7 +11855,7 @@
     "Provincia": "Jujuy",
     "lat": -23.990341,
     "lng": -64.307125,
-    "mm": 37
+    "mm": 39
   },
   {
     "Año": 2026,
@@ -11888,7 +11899,7 @@
     "Provincia": "Salta",
     "lat": -25.132822,
     "lng": -65.515391,
-    "mm": 5
+    "mm": 30
   },
   {
     "Año": 2026,
@@ -12131,5 +12142,203 @@
     "lat": -24.654866,
     "lng": -65.400645,
     "mm": 29
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "aerperico",
+    "Pluviómetro": "AER INTA Perico",
+    "Departamento": "El Carmen",
+    "Provincia": "Jujuy",
+    "lat": -24.386494,
+    "lng": -65.147832,
+    "mm": 4
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "altovina",
+    "Pluviómetro": "Alto La Viña",
+    "Departamento": "Dr. Manuel Belgrano",
+    "Provincia": "Jujuy",
+    "lat": -24.170677,
+    "lng": -65.264778,
+    "mm": 4
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "angostu",
+    "Pluviómetro": "El Angosto",
+    "Departamento": "La Caldera",
+    "Provincia": "Salta",
+    "lat": -24.584594,
+    "lng": -65.361772,
+    "mm": 10
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "apolonia",
+    "Pluviómetro": "Santa Apolonia",
+    "Departamento": "Cerrillos",
+    "Provincia": "Salta",
+    "lat": -24.923925,
+    "lng": -65.488686,
+    "mm": 2
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "bamiguelo",
+    "Pluviómetro": "Barrio Miguel Ortiz",
+    "Departamento": "Capital",
+    "Provincia": "Salta",
+    "lat": -24.75741,
+    "lng": -65.41112,
+    "mm": 4
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "elcarmen",
+    "Pluviómetro": "El Carmen",
+    "Departamento": "El Carmen",
+    "Provincia": "Jujuy",
+    "lat": -24.393152,
+    "lng": -65.240711,
+    "mm": 7
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "elencon",
+    "Pluviómetro": "El Encón",
+    "Departamento": "Capital",
+    "Provincia": "Salta",
+    "lat": -24.861831,
+    "lng": -65.529211,
+    "mm": 10
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "huertabu",
+    "Pluviómetro": "La Huerta de la Abu",
+    "Departamento": "La Caldera",
+    "Provincia": "Salta",
+    "lat": -24.6134127,
+    "lng": -65.3891557,
+    "mm": 8
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "joaquina",
+    "Pluviómetro": "La Joaquina",
+    "Departamento": "Rosario de Lerma",
+    "Provincia": "Salta",
+    "lat": -24.971025,
+    "lng": -65.568833,
+    "mm": 3
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "lafrutilla",
+    "Pluviómetro": "La Frutilla",
+    "Departamento": "La Caldera",
+    "Provincia": "Salta",
+    "lat": -24.701576,
+    "lng": -65.40402,
+    "mm": 7
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "lasmerce",
+    "Pluviómetro": "Las Mercedes",
+    "Departamento": "Cerrillos",
+    "Provincia": "Salta",
+    "lat": -24.959684,
+    "lng": -65.533405,
+    "mm": 4
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "miranda",
+    "Pluviómetro": "Miranda",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -23.990341,
+    "lng": -64.307125,
+    "mm": 19
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "monterri",
+    "Pluviómetro": "Monterriquito",
+    "Departamento": "El Carmen",
+    "Provincia": "Jujuy",
+    "lat": -24.428642,
+    "lng": -65.084427,
+    "mm": 5
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "monterrico",
+    "Pluviómetro": "Monterrico",
+    "Departamento": "El Carmen",
+    "Provincia": "Jujuy",
+    "lat": -24.436837,
+    "lng": -65.169592,
+    "mm": 5
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "orcoh",
+    "Pluviómetro": "Orco Huasi",
+    "Departamento": "La Caldera",
+    "Provincia": "Salta",
+    "lat": -24.609886,
+    "lng": -65.376658,
+    "mm": 8
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "ovejeria",
+    "Pluviómetro": "Ovejería",
+    "Departamento": "El Carmen",
+    "Provincia": "Jujuy",
+    "lat": -24.459293,
+    "lng": -65.119872,
+    "mm": 6
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "slchico",
+    "Pluviómetro": "San Lorenzo Chico",
+    "Departamento": "Capital",
+    "Provincia": "Salta",
+    "lat": -24.8063648696462,
+    "lng": -65.47834350405797,
+    "mm": 6
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "wierna",
+    "Pluviómetro": "Wierna",
+    "Departamento": "La Caldera",
+    "Provincia": "Salta",
+    "lat": -24.654866,
+    "lng": -65.400645,
+    "mm": 16
   }
 ]
