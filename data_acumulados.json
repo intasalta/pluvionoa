@@ -12196,6 +12196,72 @@
     "Provincia": "Salta",
     "lat": -24.75741,
     "lng": -65.41112,
+    "mm": 5
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "betania",
+    "Pluviómetro": "Betania",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.69181749,
+    "lng": -65.13732909,
+    "mm": 3
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "cabezabu",
+    "Pluviómetro": "Cabeza de Buey",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.79270009,
+    "lng": -65.0304325,
+    "mm": 2
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "camposanto",
+    "Pluviómetro": "EET Galileo Galilei (Campo Santo)",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.69020109,
+    "lng": -65.10091636,
+    "mm": 5
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "colmm",
+    "Pluviómetro": "Col. Mariano Moreno",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.6706301,
+    "lng": -65.0499433,
+    "mm": 4
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "desmonte",
+    "Pluviómetro": "El Desmonte",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.7030347,
+    "lng": -65.1784421,
+    "mm": 4
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "elalga",
+    "Pluviómetro": "El Algarrobal",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.6457929,
+    "lng": -64.9124554,
     "mm": 4
   },
   {
@@ -12208,6 +12274,17 @@
     "lat": -24.393152,
     "lng": -65.240711,
     "mm": 7
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "elceibal",
+    "Pluviómetro": "Esc. El Ceibal",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.5609968,
+    "lng": -65.1850502,
+    "mm": 5
   },
   {
     "Año": 2026,
@@ -12273,7 +12350,7 @@
     "Provincia": "Jujuy",
     "lat": -23.990341,
     "lng": -64.307125,
-    "mm": 19
+    "mm": 27
   },
   {
     "Año": 2026,
@@ -12295,6 +12372,17 @@
     "Provincia": "Jujuy",
     "lat": -24.436837,
     "lng": -65.169592,
+    "mm": 5
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "ojode",
+    "Pluviómetro": "Ojo de Agua - Güemes",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.603343,
+    "lng": -65.0060563,
     "mm": 5
   },
   {
@@ -12329,6 +12417,17 @@
     "lat": -24.8063648696462,
     "lng": -65.47834350405797,
     "mm": 6
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "villamon",
+    "Pluviómetro": "Villamontes",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -24.10634677607405,
+    "lng": -64.40205875397369,
+    "mm": 26
   },
   {
     "Año": 2026,
