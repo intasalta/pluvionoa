@@ -12113,6 +12113,17 @@
   {
     "Año": 2026,
     "Mes": 9,
+    "cod": "vallejos",
+    "Pluviómetro": "Vallejos",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -23.959136,
+    "lng": -64.228597,
+    "mm": 32
+  },
+  {
+    "Año": 2026,
+    "Mes": 9,
     "cod": "villamon",
     "Pluviómetro": "Villamontes",
     "Departamento": "Santa Bárbara",
@@ -12212,6 +12223,17 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "brigada",
+    "Pluviómetro": "Brigada LIF",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -23.916053,
+    "lng": -64.301872,
+    "mm": 8
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "cabezabu",
     "Pluviómetro": "Cabeza de Buey",
     "Departamento": "General Güemes",
@@ -12263,6 +12285,17 @@
     "lat": -24.6457929,
     "lng": -64.9124554,
     "mm": 4
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "elaljibe",
+    "Pluviómetro": "El Aljibe",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -24.275888,
+    "lng": -64.407917,
+    "mm": 9
   },
   {
     "Año": 2026,
@@ -12361,7 +12394,7 @@
     "Provincia": "Jujuy",
     "lat": -24.428642,
     "lng": -65.084427,
-    "mm": 5
+    "mm": 6
   },
   {
     "Año": 2026,
@@ -12410,12 +12443,45 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "santabar",
+    "Pluviómetro": "Finca Santa Bárbara",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -24.27,
+    "lng": -64.401036,
+    "mm": 13
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "santalu",
+    "Pluviómetro": "Santa Lucia - Las Vertientes",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -24.013553,
+    "lng": -64.209472,
+    "mm": 4
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "slchico",
     "Pluviómetro": "San Lorenzo Chico",
     "Departamento": "Capital",
     "Provincia": "Salta",
     "lat": -24.8063648696462,
     "lng": -65.47834350405797,
+    "mm": 6
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "vallejos",
+    "Pluviómetro": "Vallejos",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -23.959136,
+    "lng": -64.228597,
     "mm": 6
   },
   {
