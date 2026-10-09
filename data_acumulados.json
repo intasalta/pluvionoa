@@ -12174,7 +12174,7 @@
     "Provincia": "Jujuy",
     "lat": -24.170677,
     "lng": -65.264778,
-    "mm": 4
+    "mm": 6
   },
   {
     "Año": 2026,
@@ -12350,7 +12350,7 @@
     "Provincia": "Salta",
     "lat": -24.971025,
     "lng": -65.568833,
-    "mm": 3
+    "mm": 4
   },
   {
     "Año": 2026,
@@ -12373,6 +12373,17 @@
     "lat": -24.959684,
     "lng": -65.533405,
     "mm": 4
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "loslos",
+    "Pluviómetro": "Los Los",
+    "Departamento": "Chicoana",
+    "Provincia": "Salta",
+    "lat": -25.10296559469432,
+    "lng": -65.54758439680077,
+    "mm": 3
   },
   {
     "Año": 2026,
@@ -12410,6 +12421,17 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "narachi",
+    "Pluviómetro": "El Naranjo - Chicoana",
+    "Departamento": "Chicoana",
+    "Provincia": "Salta",
+    "lat": -25.132822,
+    "lng": -65.515391,
+    "mm": 2
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "ojode",
     "Pluviómetro": "Ojo de Agua - Güemes",
     "Departamento": "General Güemes",
@@ -12439,6 +12461,17 @@
     "lat": -24.459293,
     "lng": -65.119872,
     "mm": 6
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "sanantonio",
+    "Pluviómetro": "San Antonio",
+    "Departamento": "La Viña",
+    "Provincia": "Salta",
+    "lat": -25.47259,
+    "lng": -65.567392,
+    "mm": 4
   },
   {
     "Año": 2026,
