@@ -12185,7 +12185,7 @@
     "Provincia": "Salta",
     "lat": -24.584594,
     "lng": -65.361772,
-    "mm": 10
+    "mm": 14
   },
   {
     "Año": 2026,
@@ -12328,6 +12328,17 @@
     "Provincia": "Salta",
     "lat": -24.861831,
     "lng": -65.529211,
+    "mm": 12
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "elquirqui",
+    "Pluviómetro": "El Quirquincho",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.839748,
+    "lng": -62.800439,
     "mm": 10
   },
   {
@@ -12339,7 +12350,7 @@
     "Provincia": "Salta",
     "lat": -24.6134127,
     "lng": -65.3891557,
-    "mm": 8
+    "mm": 12
   },
   {
     "Año": 2026,
@@ -12350,7 +12361,7 @@
     "Provincia": "Salta",
     "lat": -24.971025,
     "lng": -65.568833,
-    "mm": 4
+    "mm": 5
   },
   {
     "Año": 2026,
@@ -12383,7 +12394,7 @@
     "Provincia": "Salta",
     "lat": -25.10296559469432,
     "lng": -65.54758439680077,
-    "mm": 3
+    "mm": 11
   },
   {
     "Año": 2026,
@@ -12449,7 +12460,7 @@
     "Provincia": "Salta",
     "lat": -24.609886,
     "lng": -65.376658,
-    "mm": 8
+    "mm": 12
   },
   {
     "Año": 2026,
@@ -12498,6 +12509,17 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "santaritas",
+    "Pluviómetro": "Santa Rita Sur",
+    "Departamento": "Chicoana",
+    "Provincia": "Salta",
+    "lat": -25.074174,
+    "lng": -65.508401,
+    "mm": 2
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "slchico",
     "Pluviómetro": "San Lorenzo Chico",
     "Departamento": "Capital",
@@ -12537,6 +12559,6 @@
     "Provincia": "Salta",
     "lat": -24.654866,
     "lng": -65.400645,
-    "mm": 16
+    "mm": 21
   }
 ]
