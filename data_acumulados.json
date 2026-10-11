@@ -12306,7 +12306,7 @@
     "Provincia": "Jujuy",
     "lat": -24.393152,
     "lng": -65.240711,
-    "mm": 7
+    "mm": 9
   },
   {
     "Año": 2026,
@@ -12377,6 +12377,17 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "lasceibas",
+    "Pluviómetro": "Las Ceibas",
+    "Departamento": "Rosario de Lerma",
+    "Provincia": "Salta",
+    "lat": -25.012723,
+    "lng": -65.649572,
+    "mm": 10
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "lasmerce",
     "Pluviómetro": "Las Mercedes",
     "Departamento": "Cerrillos",
@@ -12405,7 +12416,7 @@
     "Provincia": "Jujuy",
     "lat": -23.990341,
     "lng": -64.307125,
-    "mm": 27
+    "mm": 35
   },
   {
     "Año": 2026,
@@ -12416,7 +12427,7 @@
     "Provincia": "Jujuy",
     "lat": -24.428642,
     "lng": -65.084427,
-    "mm": 6
+    "mm": 7
   },
   {
     "Año": 2026,
@@ -12471,7 +12482,7 @@
     "Provincia": "Jujuy",
     "lat": -24.459293,
     "lng": -65.119872,
-    "mm": 6
+    "mm": 8
   },
   {
     "Año": 2026,
