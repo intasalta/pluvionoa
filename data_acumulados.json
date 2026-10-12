@@ -12174,7 +12174,7 @@
     "Provincia": "Jujuy",
     "lat": -24.170677,
     "lng": -65.264778,
-    "mm": 6
+    "mm": 18
   },
   {
     "Año": 2026,
@@ -12185,7 +12185,7 @@
     "Provincia": "Salta",
     "lat": -24.584594,
     "lng": -65.361772,
-    "mm": 14
+    "mm": 15
   },
   {
     "Año": 2026,
@@ -12306,7 +12306,7 @@
     "Provincia": "Jujuy",
     "lat": -24.393152,
     "lng": -65.240711,
-    "mm": 9
+    "mm": 12
   },
   {
     "Año": 2026,
@@ -12350,7 +12350,7 @@
     "Provincia": "Salta",
     "lat": -24.6134127,
     "lng": -65.3891557,
-    "mm": 12
+    "mm": 14
   },
   {
     "Año": 2026,
@@ -12416,7 +12416,7 @@
     "Provincia": "Jujuy",
     "lat": -23.990341,
     "lng": -64.307125,
-    "mm": 35
+    "mm": 37
   },
   {
     "Año": 2026,
@@ -12427,7 +12427,7 @@
     "Provincia": "Jujuy",
     "lat": -24.428642,
     "lng": -65.084427,
-    "mm": 7
+    "mm": 11
   },
   {
     "Año": 2026,
@@ -12471,7 +12471,7 @@
     "Provincia": "Salta",
     "lat": -24.609886,
     "lng": -65.376658,
-    "mm": 12
+    "mm": 13
   },
   {
     "Año": 2026,
@@ -12482,7 +12482,7 @@
     "Provincia": "Jujuy",
     "lat": -24.459293,
     "lng": -65.119872,
-    "mm": 8
+    "mm": 11
   },
   {
     "Año": 2026,
@@ -12531,6 +12531,17 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "sauzali",
+    "Pluviómetro": "Finca Laguna Sauzalito",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -23.896693,
+    "lng": -64.480157,
+    "mm": 10
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "slchico",
     "Pluviómetro": "San Lorenzo Chico",
     "Departamento": "Capital",
@@ -12570,6 +12581,6 @@
     "Provincia": "Salta",
     "lat": -24.654866,
     "lng": -65.400645,
-    "mm": 21
+    "mm": 22
   }
 ]
