@@ -12174,7 +12174,18 @@
     "Provincia": "Jujuy",
     "lat": -24.170677,
     "lng": -65.264778,
-    "mm": 18
+    "mm": 22
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "ampasca",
+    "Pluviómetro": "Ampascachi",
+    "Departamento": "La Viña",
+    "Provincia": "Salta",
+    "lat": -25.353346,
+    "lng": -65.526761,
+    "mm": 5
   },
   {
     "Año": 2026,
@@ -12185,7 +12196,7 @@
     "Provincia": "Salta",
     "lat": -24.584594,
     "lng": -65.361772,
-    "mm": 15
+    "mm": 24
   },
   {
     "Año": 2026,
@@ -12196,7 +12207,18 @@
     "Provincia": "Salta",
     "lat": -24.923925,
     "lng": -65.488686,
-    "mm": 2
+    "mm": 4
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "aurelia",
+    "Pluviómetro": "La Aurelia",
+    "Departamento": "Cerrillos",
+    "Provincia": "Salta",
+    "lat": -25.02334,
+    "lng": -65.504529,
+    "mm": 6
   },
   {
     "Año": 2026,
@@ -12262,7 +12284,7 @@
     "Provincia": "Salta",
     "lat": -24.6706301,
     "lng": -65.0499433,
-    "mm": 5
+    "mm": 6
   },
   {
     "Año": 2026,
@@ -12306,7 +12328,7 @@
     "Provincia": "Jujuy",
     "lat": -24.393152,
     "lng": -65.240711,
-    "mm": 12
+    "mm": 13
   },
   {
     "Año": 2026,
@@ -12317,7 +12339,7 @@
     "Provincia": "Salta",
     "lat": -24.5609968,
     "lng": -65.1850502,
-    "mm": 6
+    "mm": 7
   },
   {
     "Año": 2026,
@@ -12344,13 +12366,24 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "granjar",
+    "Pluviómetro": "Granja Rosada",
+    "Departamento": "Chicoana",
+    "Provincia": "Salta",
+    "lat": -25.065457,
+    "lng": -65.486123,
+    "mm": 12
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "huertabu",
     "Pluviómetro": "La Huerta de la Abu",
     "Departamento": "La Caldera",
     "Provincia": "Salta",
     "lat": -24.6134127,
     "lng": -65.3891557,
-    "mm": 14
+    "mm": 20
   },
   {
     "Año": 2026,
@@ -12361,7 +12394,7 @@
     "Provincia": "Salta",
     "lat": -24.971025,
     "lng": -65.568833,
-    "mm": 5
+    "mm": 16
   },
   {
     "Año": 2026,
@@ -12372,7 +12405,7 @@
     "Provincia": "Salta",
     "lat": -24.701576,
     "lng": -65.40402,
-    "mm": 7
+    "mm": 8
   },
   {
     "Año": 2026,
@@ -12388,13 +12421,24 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "lasmarga",
+    "Pluviómetro": "Las Margaritas",
+    "Departamento": "Chicoana",
+    "Provincia": "Salta",
+    "lat": -25.072152,
+    "lng": -65.572838,
+    "mm": 10
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "lasmerce",
     "Pluviómetro": "Las Mercedes",
     "Departamento": "Cerrillos",
     "Provincia": "Salta",
     "lat": -24.959684,
     "lng": -65.533405,
-    "mm": 4
+    "mm": 14
   },
   {
     "Año": 2026,
@@ -12405,7 +12449,18 @@
     "Provincia": "Salta",
     "lat": -25.10296559469432,
     "lng": -65.54758439680077,
-    "mm": 11
+    "mm": 18
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "milagro",
+    "Pluviómetro": "El Milagro",
+    "Departamento": "Cerrillos",
+    "Provincia": "Salta",
+    "lat": -25.001613,
+    "lng": -65.4353,
+    "mm": 10
   },
   {
     "Año": 2026,
@@ -12427,7 +12482,7 @@
     "Provincia": "Jujuy",
     "lat": -24.428642,
     "lng": -65.084427,
-    "mm": 11
+    "mm": 12
   },
   {
     "Año": 2026,
@@ -12438,7 +12493,7 @@
     "Provincia": "Jujuy",
     "lat": -24.436837,
     "lng": -65.169592,
-    "mm": 5
+    "mm": 7
   },
   {
     "Año": 2026,
@@ -12471,7 +12526,7 @@
     "Provincia": "Salta",
     "lat": -24.609886,
     "lng": -65.376658,
-    "mm": 13
+    "mm": 14
   },
   {
     "Año": 2026,
@@ -12482,7 +12537,7 @@
     "Provincia": "Jujuy",
     "lat": -24.459293,
     "lng": -65.119872,
-    "mm": 11
+    "mm": 12
   },
   {
     "Año": 2026,
@@ -12531,6 +12586,17 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "santod",
+    "Pluviómetro": "Santo Domingo",
+    "Departamento": "Cerrillos",
+    "Provincia": "Salta",
+    "lat": -24.89363,
+    "lng": -65.533865,
+    "mm": 10
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "sauzali",
     "Pluviómetro": "Finca Laguna Sauzalito",
     "Departamento": "Santa Bárbara",
@@ -12548,7 +12614,7 @@
     "Provincia": "Salta",
     "lat": -24.8063648696462,
     "lng": -65.47834350405797,
-    "mm": 6
+    "mm": 10
   },
   {
     "Año": 2026,
@@ -12581,6 +12647,6 @@
     "Provincia": "Salta",
     "lat": -24.654866,
     "lng": -65.400645,
-    "mm": 22
+    "mm": 40
   }
 ]
