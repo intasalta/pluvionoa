@@ -12196,7 +12196,7 @@
     "Provincia": "Salta",
     "lat": -24.584594,
     "lng": -65.361772,
-    "mm": 43
+    "mm": 65
   },
   {
     "Año": 2026,
@@ -12317,7 +12317,7 @@
     "Provincia": "Jujuy",
     "lat": -24.275888,
     "lng": -64.407917,
-    "mm": 40
+    "mm": 56
   },
   {
     "Año": 2026,
@@ -12383,7 +12383,7 @@
     "Provincia": "Salta",
     "lat": -24.6134127,
     "lng": -65.3891557,
-    "mm": 39
+    "mm": 57
   },
   {
     "Año": 2026,
@@ -12405,7 +12405,7 @@
     "Provincia": "Salta",
     "lat": -24.701576,
     "lng": -65.40402,
-    "mm": 19
+    "mm": 30
   },
   {
     "Año": 2026,
@@ -12493,7 +12493,7 @@
     "Provincia": "Jujuy",
     "lat": -24.436837,
     "lng": -65.169592,
-    "mm": 15
+    "mm": 18
   },
   {
     "Año": 2026,
@@ -12526,7 +12526,7 @@
     "Provincia": "Salta",
     "lat": -24.609886,
     "lng": -65.376658,
-    "mm": 41
+    "mm": 52
   },
   {
     "Año": 2026,
@@ -12548,7 +12548,7 @@
     "Provincia": "Salta",
     "lat": -24.927083,
     "lng": -65.606375,
-    "mm": 42
+    "mm": 43
   },
   {
     "Año": 2026,
@@ -12570,7 +12570,7 @@
     "Provincia": "Jujuy",
     "lat": -24.27,
     "lng": -64.401036,
-    "mm": 42
+    "mm": 57
   },
   {
     "Año": 2026,
@@ -12619,6 +12619,17 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "selena",
+    "Pluviómetro": "Santa Elena",
+    "Departamento": "Cerrillos",
+    "Provincia": "Salta",
+    "lat": -24.944337,
+    "lng": -65.390405,
+    "mm": 3
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "slchico",
     "Pluviómetro": "San Lorenzo Chico",
     "Departamento": "Capital",
@@ -12658,6 +12669,6 @@
     "Provincia": "Salta",
     "lat": -24.654866,
     "lng": -65.400645,
-    "mm": 56
+    "mm": 81
   }
 ]
