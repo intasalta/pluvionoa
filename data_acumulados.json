@@ -12366,6 +12366,17 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "eperanza",
+    "Pluviómetro": "La Esperanza",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.08612,
+    "lng": -62.962971,
+    "mm": 9
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "granjar",
     "Pluviómetro": "Granja Rosada",
     "Departamento": "Chicoana",
@@ -12450,6 +12461,17 @@
     "lat": -25.10296559469432,
     "lng": -65.54758439680077,
     "mm": 42
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "martaisa",
+    "Pluviómetro": "Marta Isabel",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.116959,
+    "lng": -63.032611,
+    "mm": 10
   },
   {
     "Año": 2026,
@@ -12542,6 +12564,17 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "pinpin",
+    "Pluviómetro": "El Pin Pin",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.477582,
+    "lng": -62.796677,
+    "mm": 2
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "quijano",
     "Pluviómetro": "Finca Quijano",
     "Departamento": "Rosario de Lerma",
@@ -12593,6 +12626,17 @@
     "lat": -25.074174,
     "lng": -65.508401,
     "mm": 16
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "santaviceste",
+    "Pluviómetro": "Santa Victoria Este",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.271529,
+    "lng": -62.710221,
+    "mm": 2
   },
   {
     "Año": 2026,
@@ -12659,6 +12703,17 @@
     "lat": -24.10634677607405,
     "lng": -64.40205875397369,
     "mm": 41
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "virgencar",
+    "Pluviómetro": "Virgen del Carmen",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.042404,
+    "lng": -63.030448,
+    "mm": 16
   },
   {
     "Año": 2026,
