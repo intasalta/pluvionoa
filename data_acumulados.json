@@ -12174,7 +12174,7 @@
     "Provincia": "Jujuy",
     "lat": -24.170677,
     "lng": -65.264778,
-    "mm": 70
+    "mm": 88
   },
   {
     "Año": 2026,
@@ -12207,7 +12207,7 @@
     "Provincia": "Salta",
     "lat": -24.923925,
     "lng": -65.488686,
-    "mm": 12
+    "mm": 16
   },
   {
     "Año": 2026,
@@ -12218,7 +12218,7 @@
     "Provincia": "Salta",
     "lat": -25.02334,
     "lng": -65.504529,
-    "mm": 9
+    "mm": 12
   },
   {
     "Año": 2026,
@@ -12229,7 +12229,7 @@
     "Provincia": "Salta",
     "lat": -24.75741,
     "lng": -65.41112,
-    "mm": 11
+    "mm": 20
   },
   {
     "Año": 2026,
@@ -12289,6 +12289,17 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "comsanm",
+    "Pluviómetro": "Com. Santa Maria",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.160125,
+    "lng": -62.808884,
+    "mm": 5
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "desmonte",
     "Pluviómetro": "El Desmonte",
     "Departamento": "General Güemes",
@@ -12328,7 +12339,7 @@
     "Provincia": "Jujuy",
     "lat": -24.393152,
     "lng": -65.240711,
-    "mm": 86
+    "mm": 88
   },
   {
     "Año": 2026,
@@ -12355,6 +12366,17 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "elparaiso",
+    "Pluviómetro": "El Paraíso",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.325145,
+    "lng": -62.587618,
+    "mm": 2
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "elquirqui",
     "Pluviómetro": "El Quirquincho",
     "Departamento": "Rivadavia",
@@ -12372,7 +12394,7 @@
     "Provincia": "Salta",
     "lat": -22.08612,
     "lng": -62.962971,
-    "mm": 9
+    "mm": 14
   },
   {
     "Año": 2026,
@@ -12405,7 +12427,7 @@
     "Provincia": "Salta",
     "lat": -24.971025,
     "lng": -65.568833,
-    "mm": 40
+    "mm": 48
   },
   {
     "Año": 2026,
@@ -12417,6 +12439,28 @@
     "lat": -24.701576,
     "lng": -65.40402,
     "mm": 30
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "lapunta",
+    "Pluviómetro": "La Puntana",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.018186,
+    "lng": -62.830203,
+    "mm": 72
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "larguero",
+    "Pluviómetro": "Comunidad Larguero",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.473374,
+    "lng": -62.443372,
+    "mm": 2
   },
   {
     "Año": 2026,
@@ -12498,6 +12542,17 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "misionpaz",
+    "Pluviómetro": "Mision La Paz",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.382812,
+    "lng": -62.516435,
+    "mm": 5
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "monterri",
     "Pluviómetro": "Monterriquito",
     "Departamento": "El Carmen",
@@ -12526,7 +12581,7 @@
     "Provincia": "Salta",
     "lat": -25.132822,
     "lng": -65.515391,
-    "mm": 27
+    "mm": 35
   },
   {
     "Año": 2026,
@@ -12570,7 +12625,7 @@
     "Provincia": "Salta",
     "lat": -22.477582,
     "lng": -62.796677,
-    "mm": 2
+    "mm": 4
   },
   {
     "Año": 2026,
@@ -12586,13 +12641,24 @@
   {
     "Año": 2026,
     "Mes": 10,
+    "cod": "riconti",
+    "Pluviómetro": "Rincon del Tigre",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.032576,
+    "lng": -62.953474,
+    "mm": 30
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
     "cod": "sanantonio",
     "Pluviómetro": "San Antonio",
     "Departamento": "La Viña",
     "Provincia": "Salta",
     "lat": -25.47259,
     "lng": -65.567392,
-    "mm": 28
+    "mm": 30
   },
   {
     "Año": 2026,
@@ -12713,7 +12779,7 @@
     "Provincia": "Salta",
     "lat": -22.042404,
     "lng": -63.030448,
-    "mm": 16
+    "mm": 20
   },
   {
     "Año": 2026,
