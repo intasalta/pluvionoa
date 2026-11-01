@@ -12174,7 +12174,7 @@
     "Provincia": "Salta",
     "lat": -22.742986,
     "lng": -62.498435,
-    "mm": 3
+    "mm": 27
   },
   {
     "Año": 2026,
@@ -12328,7 +12328,7 @@
     "Provincia": "Salta",
     "lat": -22.804757,
     "lng": -62.941977,
-    "mm": 3
+    "mm": 5
   },
   {
     "Año": 2026,
@@ -12438,7 +12438,7 @@
     "Provincia": "Salta",
     "lat": -22.839748,
     "lng": -62.800439,
-    "mm": 10
+    "mm": 17
   },
   {
     "Año": 2026,
@@ -12725,6 +12725,17 @@
     "lat": -24.459293,
     "lng": -65.119872,
     "mm": 31
+  },
+  {
+    "Año": 2026,
+    "Mes": 10,
+    "cod": "palmitas",
+    "Pluviómetro": "Las Palmitas",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.903215,
+    "lng": -62.494961,
+    "mm": 11
   },
   {
     "Año": 2026,
