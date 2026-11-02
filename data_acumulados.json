@@ -12967,5 +12967,16 @@
     "lat": -24.654866,
     "lng": -65.400645,
     "mm": 105
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "altosie",
+    "Pluviómetro": "Alto de la Sierra",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.742986,
+    "lng": -62.498435,
+    "mm": 28
   }
 ]
