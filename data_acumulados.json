@@ -12982,13 +12982,24 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "angostu",
+    "Pluviómetro": "El Angosto",
+    "Departamento": "La Caldera",
+    "Provincia": "Salta",
+    "lat": -24.584594,
+    "lng": -65.361772,
+    "mm": 1
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "apolonia",
     "Pluviómetro": "Santa Apolonia",
     "Departamento": "Cerrillos",
     "Provincia": "Salta",
     "lat": -24.923925,
     "lng": -65.488686,
-    "mm": 4
+    "mm": 6
   },
   {
     "Año": 2026,
@@ -13081,13 +13092,24 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "huertabu",
+    "Pluviómetro": "La Huerta de la Abu",
+    "Departamento": "La Caldera",
+    "Provincia": "Salta",
+    "lat": -24.6134127,
+    "lng": -65.3891557,
+    "mm": 1
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "joaquina",
     "Pluviómetro": "La Joaquina",
     "Departamento": "Rosario de Lerma",
     "Provincia": "Salta",
     "lat": -24.971025,
     "lng": -65.568833,
-    "mm": 2
+    "mm": 5
   },
   {
     "Año": 2026,
@@ -13131,7 +13153,7 @@
     "Provincia": "Salta",
     "lat": -25.10296559469432,
     "lng": -65.54758439680077,
-    "mm": 2
+    "mm": 5
   },
   {
     "Año": 2026,
@@ -13142,7 +13164,7 @@
     "Provincia": "Salta",
     "lat": -24.894545291642068,
     "lng": -65.51515067505545,
-    "mm": 5
+    "mm": 9
   },
   {
     "Año": 2026,
@@ -13154,6 +13176,17 @@
     "lat": -22.116959,
     "lng": -63.032611,
     "mm": 7
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "orcoh",
+    "Pluviómetro": "Orco Huasi",
+    "Departamento": "La Caldera",
+    "Provincia": "Salta",
+    "lat": -24.609886,
+    "lng": -65.376658,
+    "mm": 1
   },
   {
     "Año": 2026,
@@ -13175,7 +13208,7 @@
     "Provincia": "Salta",
     "lat": -24.927083,
     "lng": -65.606375,
-    "mm": 2
+    "mm": 5
   },
   {
     "Año": 2026,
