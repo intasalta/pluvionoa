@@ -13180,6 +13180,17 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "narachi",
+    "Pluviómetro": "El Naranjo - Chicoana",
+    "Departamento": "Chicoana",
+    "Provincia": "Salta",
+    "lat": -25.132822,
+    "lng": -65.515391,
+    "mm": 2
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "orcoh",
     "Pluviómetro": "Orco Huasi",
     "Departamento": "La Caldera",
