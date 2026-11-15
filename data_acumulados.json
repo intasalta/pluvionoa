@@ -12982,13 +12982,24 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "altovina",
+    "Pluviómetro": "Alto La Viña",
+    "Departamento": "Dr. Manuel Belgrano",
+    "Provincia": "Jujuy",
+    "lat": -24.170677,
+    "lng": -65.264778,
+    "mm": 2
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "angostu",
     "Pluviómetro": "El Angosto",
     "Departamento": "La Caldera",
     "Provincia": "Salta",
     "lat": -24.584594,
     "lng": -65.361772,
-    "mm": 1
+    "mm": 7
   },
   {
     "Año": 2026,
@@ -13000,6 +13011,17 @@
     "lat": -24.923925,
     "lng": -65.488686,
     "mm": 6
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "bamiguelo",
+    "Pluviómetro": "Barrio Miguel Ortiz",
+    "Departamento": "Capital",
+    "Provincia": "Salta",
+    "lat": -24.75741,
+    "lng": -65.41112,
+    "mm": 1
   },
   {
     "Año": 2026,
@@ -13098,7 +13120,7 @@
     "Provincia": "Salta",
     "lat": -24.6134127,
     "lng": -65.3891557,
-    "mm": 1
+    "mm": 4
   },
   {
     "Año": 2026,
@@ -13197,6 +13219,17 @@
     "Provincia": "Salta",
     "lat": -24.609886,
     "lng": -65.376658,
+    "mm": 4
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "ovejeria",
+    "Pluviómetro": "Ovejería",
+    "Departamento": "El Carmen",
+    "Provincia": "Jujuy",
+    "lat": -24.459293,
+    "lng": -65.119872,
     "mm": 1
   },
   {
@@ -13231,6 +13264,17 @@
     "lat": -22.032576,
     "lng": -62.953474,
     "mm": 32
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "sanlore",
+    "Pluviómetro": "Obs. San Lorenzo",
+    "Departamento": "Capital",
+    "Provincia": "Salta",
+    "lat": -24.743687,
+    "lng": -65.485445,
+    "mm": 3
   },
   {
     "Año": 2026,
@@ -13286,5 +13330,16 @@
     "lat": -22.042404,
     "lng": -63.030448,
     "mm": 28
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "wierna",
+    "Pluviómetro": "Wierna",
+    "Departamento": "La Caldera",
+    "Provincia": "Salta",
+    "lat": -24.654866,
+    "lng": -65.400645,
+    "mm": 6
   }
 ]
