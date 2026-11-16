@@ -13136,6 +13136,17 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "lafrutilla",
+    "Pluviómetro": "La Frutilla",
+    "Departamento": "La Caldera",
+    "Provincia": "Salta",
+    "lat": -24.701576,
+    "lng": -65.40402,
+    "mm": 2
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "lapunta",
     "Pluviómetro": "La Puntana",
     "Departamento": "Rivadavia",
