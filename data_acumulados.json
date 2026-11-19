@@ -12361,7 +12361,7 @@
     "Provincia": "Jujuy",
     "lat": -24.275888,
     "lng": -64.407917,
-    "mm": 56
+    "mm": 71
   },
   {
     "Año": 2026,
@@ -12845,7 +12845,7 @@
     "Provincia": "Jujuy",
     "lat": -24.27,
     "lng": -64.401036,
-    "mm": 57
+    "mm": 73
   },
   {
     "Año": 2026,
@@ -13026,6 +13026,17 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "brigada",
+    "Pluviómetro": "Brigada LIF",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -23.916053,
+    "lng": -64.301872,
+    "mm": 2
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "buenlu",
     "Pluviómetro": "Buen Lugar",
     "Departamento": "Rivadavia",
@@ -13077,6 +13088,17 @@
     "lat": -22.804757,
     "lng": -62.941977,
     "mm": 3
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "elaljibe",
+    "Pluviómetro": "El Aljibe",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -24.275888,
+    "lng": -64.407917,
+    "mm": 10
   },
   {
     "Año": 2026,
@@ -13296,6 +13318,28 @@
     "Provincia": "Salta",
     "lat": -24.881661321553562,
     "lng": -65.41865269181758,
+    "mm": 2
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "santabar",
+    "Pluviómetro": "Finca Santa Bárbara",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -24.27,
+    "lng": -64.401036,
+    "mm": 10
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "santalu",
+    "Pluviómetro": "Santa Lucia - Las Vertientes",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -24.013553,
+    "lng": -64.209472,
     "mm": 2
   },
   {
