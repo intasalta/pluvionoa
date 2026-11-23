@@ -12988,7 +12988,7 @@
     "Provincia": "Jujuy",
     "lat": -24.170677,
     "lng": -65.264778,
-    "mm": 2
+    "mm": 3
   },
   {
     "Año": 2026,
@@ -13048,6 +13048,17 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "campola",
+    "Pluviómetro": "Campo Largo",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.553894,
+    "lng": -62.513584,
+    "mm": 15
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "comcru",
     "Pluviómetro": "Com. El Cruce",
     "Departamento": "Rivadavia",
@@ -13076,7 +13087,7 @@
     "Provincia": "Salta",
     "lat": -22.479806,
     "lng": -62.391685,
-    "mm": 7
+    "mm": 92
   },
   {
     "Año": 2026,
@@ -13092,6 +13103,17 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "elalga",
+    "Pluviómetro": "El Algarrobal",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.6457929,
+    "lng": -64.9124554,
+    "mm": 6
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "elaljibe",
     "Pluviómetro": "El Aljibe",
     "Departamento": "Santa Bárbara",
@@ -13103,13 +13125,46 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "elbordo",
+    "Pluviómetro": "El Bordo",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.454148,
+    "lng": -62.49021,
+    "mm": 70
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "elcarmen",
+    "Pluviómetro": "El Carmen",
+    "Departamento": "El Carmen",
+    "Provincia": "Jujuy",
+    "lat": -24.393152,
+    "lng": -65.240711,
+    "mm": 1
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "elparaiso",
     "Pluviómetro": "El Paraíso",
     "Departamento": "Rivadavia",
     "Provincia": "Salta",
     "lat": -22.325145,
     "lng": -62.587618,
-    "mm": 7
+    "mm": 74
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "elquebra",
+    "Pluviómetro": "El Quebracho",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.542014,
+    "lng": -62.37173,
+    "mm": 64
   },
   {
     "Año": 2026,
@@ -13131,7 +13186,18 @@
     "Provincia": "Salta",
     "lat": -22.08612,
     "lng": -62.962971,
-    "mm": 12
+    "mm": 132
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "fliarojas",
+    "Pluviómetro": "Rojas",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.111841,
+    "lng": -63.06872,
+    "mm": 39
   },
   {
     "Año": 2026,
@@ -13175,7 +13241,18 @@
     "Provincia": "Salta",
     "lat": -22.018186,
     "lng": -62.830203,
-    "mm": 20
+    "mm": 37
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "larguero",
+    "Pluviómetro": "Comunidad Larguero",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.473374,
+    "lng": -62.443372,
+    "mm": 90
   },
   {
     "Año": 2026,
@@ -13219,7 +13296,7 @@
     "Provincia": "Salta",
     "lat": -24.894545291642068,
     "lng": -65.51515067505545,
-    "mm": 9
+    "mm": 11
   },
   {
     "Año": 2026,
@@ -13235,6 +13312,28 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "miranda",
+    "Pluviómetro": "Miranda",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -23.990341,
+    "lng": -64.307125,
+    "mm": 39
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "misionpaz",
+    "Pluviómetro": "Mision La Paz",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.382812,
+    "lng": -62.516435,
+    "mm": 110
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "narachi",
     "Pluviómetro": "El Naranjo - Chicoana",
     "Departamento": "Chicoana",
@@ -13242,6 +13341,28 @@
     "lat": -25.132822,
     "lng": -65.515391,
     "mm": 2
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "ojoagua",
+    "Pluviómetro": "Ojo de Agua",
+    "Departamento": "Metán",
+    "Provincia": "Salta",
+    "lat": -25.403289910517973,
+    "lng": -64.640016156496,
+    "mm": 6
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "ojode",
+    "Pluviómetro": "Ojo de Agua - Güemes",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.603343,
+    "lng": -65.0060563,
+    "mm": 6
   },
   {
     "Año": 2026,
@@ -13263,7 +13384,7 @@
     "Provincia": "Jujuy",
     "lat": -24.459293,
     "lng": -65.119872,
-    "mm": 1
+    "mm": 3
   },
   {
     "Año": 2026,
@@ -13274,7 +13395,18 @@
     "Provincia": "Salta",
     "lat": -22.477582,
     "lng": -62.796677,
-    "mm": 20
+    "mm": 25
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "pozoyegua",
+    "Pluviómetro": "Pozo La Yegua",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.514962,
+    "lng": -62.45829,
+    "mm": 64
   },
   {
     "Año": 2026,
@@ -13285,7 +13417,7 @@
     "Provincia": "Salta",
     "lat": -24.927083,
     "lng": -65.606375,
-    "mm": 5
+    "mm": 6
   },
   {
     "Año": 2026,
@@ -13296,7 +13428,7 @@
     "Provincia": "Salta",
     "lat": -22.032576,
     "lng": -62.953474,
-    "mm": 32
+    "mm": 117
   },
   {
     "Año": 2026,
@@ -13351,7 +13483,7 @@
     "Provincia": "Salta",
     "lat": -22.271529,
     "lng": -62.710221,
-    "mm": 10
+    "mm": 68
   },
   {
     "Año": 2026,
@@ -13367,6 +13499,28 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "santolu",
+    "Pluviómetro": "Santo Lugares",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.465455,
+    "lng": -62.475143,
+    "mm": 75
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "sauzali",
+    "Pluviómetro": "Finca Laguna Sauzalito",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -23.896693,
+    "lng": -64.480157,
+    "mm": 5
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "trespozos",
     "Pluviómetro": "Tres Pozos",
     "Departamento": "Rivadavia",
@@ -13378,13 +13532,24 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "villamon",
+    "Pluviómetro": "Villamontes",
+    "Departamento": "Santa Bárbara",
+    "Provincia": "Jujuy",
+    "lat": -24.10634677607405,
+    "lng": -64.40205875397369,
+    "mm": 12
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "virgencar",
     "Pluviómetro": "Virgen del Carmen",
     "Departamento": "Rivadavia",
     "Provincia": "Salta",
     "lat": -22.042404,
     "lng": -63.030448,
-    "mm": 28
+    "mm": 116
   },
   {
     "Año": 2026,
