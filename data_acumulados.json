@@ -13043,7 +13043,7 @@
     "Provincia": "Salta",
     "lat": -22.378379,
     "lng": -62.624034,
-    "mm": 5
+    "mm": 89
   },
   {
     "Año": 2026,
@@ -13065,7 +13065,7 @@
     "Provincia": "Salta",
     "lat": -22.134202,
     "lng": -62.883381,
-    "mm": 10
+    "mm": 86
   },
   {
     "Año": 2026,
@@ -13076,7 +13076,7 @@
     "Provincia": "Salta",
     "lat": -22.160125,
     "lng": -62.808884,
-    "mm": 8
+    "mm": 44
   },
   {
     "Año": 2026,
@@ -13143,6 +13143,17 @@
     "lat": -24.393152,
     "lng": -65.240711,
     "mm": 1
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "elpalmar",
+    "Pluviómetro": "El Palmar",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.267394,
+    "lng": -62.994902,
+    "mm": 70
   },
   {
     "Año": 2026,
@@ -13345,6 +13356,17 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "naranjo",
+    "Pluviómetro": "El Naranjo",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.325585,
+    "lng": -62.717147,
+    "mm": 92
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "ojoagua",
     "Pluviómetro": "Ojo de Agua",
     "Departamento": "Metán",
@@ -13385,6 +13407,17 @@
     "lat": -24.459293,
     "lng": -65.119872,
     "mm": 3
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "palmitas",
+    "Pluviómetro": "Las Palmitas",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.903215,
+    "lng": -62.494961,
+    "mm": 9
   },
   {
     "Año": 2026,
