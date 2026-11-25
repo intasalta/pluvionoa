@@ -12977,7 +12977,7 @@
     "Provincia": "Salta",
     "lat": -22.742986,
     "lng": -62.498435,
-    "mm": 28
+    "mm": 43
   },
   {
     "Año": 2026,
@@ -12988,7 +12988,18 @@
     "Provincia": "Jujuy",
     "lat": -24.170677,
     "lng": -65.264778,
-    "mm": 3
+    "mm": 8
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "ampasca",
+    "Pluviómetro": "Ampascachi",
+    "Departamento": "La Viña",
+    "Provincia": "Salta",
+    "lat": -25.353346,
+    "lng": -65.526761,
+    "mm": 2
   },
   {
     "Año": 2026,
@@ -12999,7 +13010,7 @@
     "Provincia": "Salta",
     "lat": -24.584594,
     "lng": -65.361772,
-    "mm": 10
+    "mm": 16
   },
   {
     "Año": 2026,
@@ -13010,7 +13021,18 @@
     "Provincia": "Salta",
     "lat": -24.923925,
     "lng": -65.488686,
-    "mm": 6
+    "mm": 9
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "aurelia",
+    "Pluviómetro": "La Aurelia",
+    "Departamento": "Cerrillos",
+    "Provincia": "Salta",
+    "lat": -25.02334,
+    "lng": -65.504529,
+    "mm": 2
   },
   {
     "Año": 2026,
@@ -13021,7 +13043,7 @@
     "Provincia": "Salta",
     "lat": -24.75741,
     "lng": -65.41112,
-    "mm": 1
+    "mm": 3
   },
   {
     "Año": 2026,
@@ -13048,6 +13070,17 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "cabezabu",
+    "Pluviómetro": "Cabeza de Buey",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.79270009,
+    "lng": -65.0304325,
+    "mm": 2
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "campola",
     "Pluviómetro": "Campo Largo",
     "Departamento": "Rivadavia",
@@ -13059,13 +13092,35 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "camposanto",
+    "Pluviómetro": "EET Galileo Galilei (Campo Santo)",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.69020109,
+    "lng": -65.10091636,
+    "mm": 2
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "colmm",
+    "Pluviómetro": "Col. Mariano Moreno",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.6706301,
+    "lng": -65.0499433,
+    "mm": 3
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "comcru",
     "Pluviómetro": "Com. El Cruce",
     "Departamento": "Rivadavia",
     "Provincia": "Salta",
     "lat": -22.134202,
     "lng": -62.883381,
-    "mm": 86
+    "mm": 118
   },
   {
     "Año": 2026,
@@ -13087,7 +13142,7 @@
     "Provincia": "Salta",
     "lat": -22.479806,
     "lng": -62.391685,
-    "mm": 92
+    "mm": 140
   },
   {
     "Año": 2026,
@@ -13131,7 +13186,7 @@
     "Provincia": "Salta",
     "lat": -22.454148,
     "lng": -62.49021,
-    "mm": 70
+    "mm": 110
   },
   {
     "Año": 2026,
@@ -13142,7 +13197,18 @@
     "Provincia": "Jujuy",
     "lat": -24.393152,
     "lng": -65.240711,
-    "mm": 1
+    "mm": 5
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "elceibal",
+    "Pluviómetro": "Esc. El Ceibal",
+    "Departamento": "General Güemes",
+    "Provincia": "Salta",
+    "lat": -24.5609968,
+    "lng": -65.1850502,
+    "mm": 6
   },
   {
     "Año": 2026,
@@ -13164,7 +13230,7 @@
     "Provincia": "Salta",
     "lat": -22.325145,
     "lng": -62.587618,
-    "mm": 74
+    "mm": 95
   },
   {
     "Año": 2026,
@@ -13175,7 +13241,7 @@
     "Provincia": "Salta",
     "lat": -22.542014,
     "lng": -62.37173,
-    "mm": 64
+    "mm": 88
   },
   {
     "Año": 2026,
@@ -13197,7 +13263,7 @@
     "Provincia": "Salta",
     "lat": -22.08612,
     "lng": -62.962971,
-    "mm": 132
+    "mm": 184
   },
   {
     "Año": 2026,
@@ -13208,7 +13274,18 @@
     "Provincia": "Salta",
     "lat": -22.111841,
     "lng": -63.06872,
-    "mm": 39
+    "mm": 127
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "gusacha",
+    "Pluviómetro": "La Gusacha",
+    "Departamento": "Rivadavia",
+    "Provincia": "Salta",
+    "lat": -22.669018,
+    "lng": -62.638115,
+    "mm": 32
   },
   {
     "Año": 2026,
@@ -13219,7 +13296,7 @@
     "Provincia": "Salta",
     "lat": -24.6134127,
     "lng": -65.3891557,
-    "mm": 7
+    "mm": 12
   },
   {
     "Año": 2026,
@@ -13230,7 +13307,7 @@
     "Provincia": "Salta",
     "lat": -24.971025,
     "lng": -65.568833,
-    "mm": 5
+    "mm": 10
   },
   {
     "Año": 2026,
@@ -13241,7 +13318,7 @@
     "Provincia": "Salta",
     "lat": -24.701576,
     "lng": -65.40402,
-    "mm": 2
+    "mm": 8
   },
   {
     "Año": 2026,
@@ -13263,7 +13340,7 @@
     "Provincia": "Salta",
     "lat": -22.473374,
     "lng": -62.443372,
-    "mm": 90
+    "mm": 146
   },
   {
     "Año": 2026,
@@ -13275,6 +13352,17 @@
     "lat": -25.012723,
     "lng": -65.649572,
     "mm": 10
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "lasmarga",
+    "Pluviómetro": "Las Margaritas",
+    "Departamento": "Chicoana",
+    "Provincia": "Salta",
+    "lat": -25.072152,
+    "lng": -65.572838,
+    "mm": 6
   },
   {
     "Año": 2026,
@@ -13296,7 +13384,7 @@
     "Provincia": "Salta",
     "lat": -25.10296559469432,
     "lng": -65.54758439680077,
-    "mm": 5
+    "mm": 10
   },
   {
     "Año": 2026,
@@ -13307,7 +13395,7 @@
     "Provincia": "Salta",
     "lat": -24.894545291642068,
     "lng": -65.51515067505545,
-    "mm": 11
+    "mm": 15
   },
   {
     "Año": 2026,
@@ -13318,7 +13406,18 @@
     "Provincia": "Salta",
     "lat": -22.116959,
     "lng": -63.032611,
-    "mm": 7
+    "mm": 107
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "milagro",
+    "Pluviómetro": "El Milagro",
+    "Departamento": "Cerrillos",
+    "Provincia": "Salta",
+    "lat": -25.001613,
+    "lng": -65.4353,
+    "mm": 2
   },
   {
     "Año": 2026,
@@ -13345,13 +13444,35 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "monterri",
+    "Pluviómetro": "Monterriquito",
+    "Departamento": "El Carmen",
+    "Provincia": "Jujuy",
+    "lat": -24.428642,
+    "lng": -65.084427,
+    "mm": 28
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
+    "cod": "monterrico",
+    "Pluviómetro": "Monterrico",
+    "Departamento": "El Carmen",
+    "Provincia": "Jujuy",
+    "lat": -24.436837,
+    "lng": -65.169592,
+    "mm": 7
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "narachi",
     "Pluviómetro": "El Naranjo - Chicoana",
     "Departamento": "Chicoana",
     "Provincia": "Salta",
     "lat": -25.132822,
     "lng": -65.515391,
-    "mm": 2
+    "mm": 6
   },
   {
     "Año": 2026,
@@ -13373,7 +13494,7 @@
     "Provincia": "Salta",
     "lat": -25.403289910517973,
     "lng": -64.640016156496,
-    "mm": 6
+    "mm": 9
   },
   {
     "Año": 2026,
@@ -13395,7 +13516,7 @@
     "Provincia": "Salta",
     "lat": -24.609886,
     "lng": -65.376658,
-    "mm": 6
+    "mm": 16
   },
   {
     "Año": 2026,
@@ -13406,7 +13527,7 @@
     "Provincia": "Jujuy",
     "lat": -24.459293,
     "lng": -65.119872,
-    "mm": 3
+    "mm": 13
   },
   {
     "Año": 2026,
@@ -13428,7 +13549,7 @@
     "Provincia": "Salta",
     "lat": -22.477582,
     "lng": -62.796677,
-    "mm": 25
+    "mm": 50
   },
   {
     "Año": 2026,
@@ -13439,7 +13560,7 @@
     "Provincia": "Salta",
     "lat": -22.514962,
     "lng": -62.45829,
-    "mm": 64
+    "mm": 110
   },
   {
     "Año": 2026,
@@ -13472,7 +13593,7 @@
     "Provincia": "Salta",
     "lat": -24.743687,
     "lng": -65.485445,
-    "mm": 3
+    "mm": 8
   },
   {
     "Año": 2026,
@@ -13510,13 +13631,24 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "santaritas",
+    "Pluviómetro": "Santa Rita Sur",
+    "Departamento": "Chicoana",
+    "Provincia": "Salta",
+    "lat": -25.074174,
+    "lng": -65.508401,
+    "mm": 3
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "santaviceste",
     "Pluviómetro": "Santa Victoria Este",
     "Departamento": "Rivadavia",
     "Provincia": "Salta",
     "lat": -22.271529,
     "lng": -62.710221,
-    "mm": 68
+    "mm": 114
   },
   {
     "Año": 2026,
@@ -13527,7 +13659,7 @@
     "Provincia": "Salta",
     "lat": -24.89363,
     "lng": -65.533865,
-    "mm": 6
+    "mm": 12
   },
   {
     "Año": 2026,
@@ -13538,7 +13670,7 @@
     "Provincia": "Salta",
     "lat": -22.465455,
     "lng": -62.475143,
-    "mm": 75
+    "mm": 84
   },
   {
     "Año": 2026,
@@ -13554,13 +13686,24 @@
   {
     "Año": 2026,
     "Mes": 11,
+    "cod": "slchico",
+    "Pluviómetro": "San Lorenzo Chico",
+    "Departamento": "Capital",
+    "Provincia": "Salta",
+    "lat": -24.8063648696462,
+    "lng": -65.47834350405797,
+    "mm": 2
+  },
+  {
+    "Año": 2026,
+    "Mes": 11,
     "cod": "trespozos",
     "Pluviómetro": "Tres Pozos",
     "Departamento": "Rivadavia",
     "Provincia": "Salta",
     "lat": -22.346657,
     "lng": -63.036783,
-    "mm": 5
+    "mm": 33
   },
   {
     "Año": 2026,
@@ -13582,7 +13725,7 @@
     "Provincia": "Salta",
     "lat": -22.042404,
     "lng": -63.030448,
-    "mm": 116
+    "mm": 156
   },
   {
     "Año": 2026,
@@ -13593,6 +13736,6 @@
     "Provincia": "Salta",
     "lat": -24.654866,
     "lng": -65.400645,
-    "mm": 6
+    "mm": 12
   }
 ]
